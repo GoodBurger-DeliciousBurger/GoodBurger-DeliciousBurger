@@ -7,22 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class GamePrologue : MonoBehaviour
 {
-    public Image imageA;
-    public Image imageB;
-    public float delay = 1.5f; // 지연 시간 (1~2초 사이로 설정)
-
     // text
     public TMP_Text prologueText;
     string dialogue;
 
     void Start()
     {
-        // 게임이 시작될 때 코루틴을 시작
-        StartCoroutine(SwitchImageAfterDelay());
-
         // 프롤로그 - 1
         dialogue = "이번주 핫이슈는 이번에 신장 개업한 ‘좋은 햄버거 맛있는 햄버거’ 가게입니다 !";
-        StartCoroutine(Typing(dialogue));
+        StartCoroutine(ShowDialogues());
     }
 
     void Update()
@@ -30,29 +23,27 @@ public class GamePrologue : MonoBehaviour
         
     }
 
-    IEnumerator Typing(string talk)
+    // 텍스트 타이핑 효과
+    IEnumerator Typing(string t)
     {
         // text null값으로 설정
         prologueText.text = null;
-        for(int i = 0; i < talk.Length; i++) 
+        for(int i = 0; i < t.Length; i++)
         {
-            prologueText.text += talk[i];
+            prologueText.text += t[i];
             // 속도
             yield return new WaitForSeconds(0.05f);
         }
     }
 
-    IEnumerator SwitchImageAfterDelay()
+    // 프롤로그 대사 출력 코루틴
+    IEnumerator ShowDialogues()
     {
-        // 이미지 A 활성화
-        imageA.gameObject.SetActive(true);
-        imageB.gameObject.SetActive(false);
-
-        // delay 시간만큼 대기
-        yield return new WaitForSeconds(delay);
-
-        // 이미지 B 활성화, 이미지 A 비활성화
-        imageA.gameObject.SetActive(false);
-        imageB.gameObject.SetActive(true);
+        // 프롤로그 - 1
+        yield return StartCoroutine(Typing(dialogue));
+        // 다음 대사 속도
+        yield return new WaitForSeconds(2.0f);
+        // 프롤로그 - 2
+        yield return StartCoroutine(Typing("       건너편 가게인 ‘햄버거 업고 튀어’ 가게와 라이벌 구도가 되었죠 !"));
     }
 }

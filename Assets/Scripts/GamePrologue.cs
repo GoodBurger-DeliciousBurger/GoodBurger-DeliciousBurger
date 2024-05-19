@@ -43,7 +43,13 @@ public class GamePrologue : MonoBehaviour
         yield return StartCoroutine(Typing(dialogue));
         // 다음 대사 속도
         yield return new WaitForSeconds(2.0f);
-        // 프롤로그 - 2
-        yield return StartCoroutine(Typing("       건너편 가게인 ‘햄버거 업고 튀어’ 가게와 라이벌 구도가 되었죠 !"));
+        // 프롤로그 - 2 
+        yield return StartCoroutine(Typing("건너편 가게인 ‘햄버거 업고 튀어’ 가게와 라이벌 구도가 되었죠 !"));
+        yield return new WaitForSeconds(2.0f);
+        // 프롤로그 - 3
+        yield return StartCoroutine(Typing("과연 ‘좋은 햄버거 맛있는 햄버거’ 가게 ‘햄버거 업고 튀어’ 가게를 이길 수 있을지"));
+        yield return new WaitForSeconds(2.0f);
+        // 프롤로그 - 4
+        yield return StartCoroutine(Typing("매우 기대되는 부분입니다! 이기는 가게 우리팀!"));
     }
 }

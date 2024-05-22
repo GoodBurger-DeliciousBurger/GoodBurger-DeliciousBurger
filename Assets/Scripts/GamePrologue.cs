@@ -1,26 +1,39 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GamePrologue : MonoBehaviour
 {
+    Image image;
+    public Sprite[] sprites; // 배열로 선언
     // text
     public TMP_Text prologueText;
-    string dialogue;
+    string[] dialogues;
+    int dialogueIndex = 0; // 현재 대사 인덱스
 
     void Start()
     {
-        // 프롤로그 - 1
-        dialogue = "이번주 핫이슈는 이번에 신장 개업한 ‘좋은 햄버거 맛있는 햄버거’ 가게입니다 !";
-        StartCoroutine(ShowDialogues());
+        // 대사 배열 초기화
+        dialogues = new string[]
+        {
+            "이번주 핫이슈는 이번에 신장 개업한 ‘좋은 햄버거 맛있는 햄버거’ 가게입니다 !",
+            "건너편 가게인 ‘햄버거 업고 튀어’ 가게와 라이벌 구도가 되었죠 !",
+            "과연 ‘좋은 햄버거 맛있는 햄버거’ 가게 ‘햄버거 업고 튀어’ 가게를 이길 수 있을지",
+            "매우 기대되는 부분입니다! 이기는 가게 우리팀!"
+        };
+
+        // 첫 번째 대사 자동 출력
+        StartCoroutine(ShowDialogue());
     }
 
     void Update()
     {
-        
+        // 터치 입력을 감지
+        if (Input.GetMouseButtonDown(0) && dialogueIndex > 0 && dialogueIndex < dialogues.Length)
+        {
+            StartCoroutine(ShowDialogue());
+        }
     }
 
     // 텍스트 타이핑 효과
@@ -28,7 +41,7 @@ public class GamePrologue : MonoBehaviour
     {
         // text null값으로 설정
         prologueText.text = null;
-        for(int i = 0; i < t.Length; i++)
+        for (int i = 0; i < t.Length; i++)
         {
             prologueText.text += t[i];
             // 속도
@@ -36,20 +49,14 @@ public class GamePrologue : MonoBehaviour
         }
     }
 
-    // 프롤로그 대사 출력 코루틴
-    IEnumerator ShowDialogues()
+    // 대사 출력 코루틴
+    IEnumerator ShowDialogue()
     {
-        // 프롤로그 - 1
-        yield return StartCoroutine(Typing(dialogue));
+        // 현재 대사 출력
+        yield return StartCoroutine(Typing(dialogues[dialogueIndex]));
+        // 대사 인덱스 증가
+        dialogueIndex++;
         // 다음 대사 속도
         yield return new WaitForSeconds(2.0f);
-        // 프롤로그 - 2 
-        yield return StartCoroutine(Typing("건너편 가게인 ‘햄버거 업고 튀어’ 가게와 라이벌 구도가 되었죠 !"));
-        yield return new WaitForSeconds(2.0f);
-        // 프롤로그 - 3
-        yield return StartCoroutine(Typing("과연 ‘좋은 햄버거 맛있는 햄버거’ 가게 ‘햄버거 업고 튀어’ 가게를 이길 수 있을지"));
-        yield return new WaitForSeconds(2.0f);
-        // 프롤로그 - 4
-        yield return StartCoroutine(Typing("매우 기대되는 부분입니다! 이기는 가게 우리팀!"));
     }
 }

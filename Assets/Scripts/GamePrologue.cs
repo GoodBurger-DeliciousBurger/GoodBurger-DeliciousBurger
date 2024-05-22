@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 public class GamePrologue : MonoBehaviour
 {
-    Image image;
-    public Sprite[] sprites; // 배열로 선언
-    // text
     public TMP_Text prologueText;
     string[] dialogues;
     int dialogueIndex = 0; // 현재 대사 인덱스
+    bool isTyping = false; // 대사 출력 중인지 확인하는 플래그
 
     void Start()
     {
@@ -30,7 +28,7 @@ public class GamePrologue : MonoBehaviour
     void Update()
     {
         // 터치 입력을 감지
-        if (Input.GetMouseButtonDown(0) && dialogueIndex > 0 && dialogueIndex < dialogues.Length)
+        if (Input.GetMouseButtonDown(0) && !isTyping && dialogueIndex < dialogues.Length)
         {
             StartCoroutine(ShowDialogue());
         }
@@ -39,6 +37,8 @@ public class GamePrologue : MonoBehaviour
     // 텍스트 타이핑 효과
     IEnumerator Typing(string t)
     {
+        // 대사 출력 중으로 설정
+        isTyping = true;
         // text null값으로 설정
         prologueText.text = null;
         for (int i = 0; i < t.Length; i++)
@@ -47,6 +47,8 @@ public class GamePrologue : MonoBehaviour
             // 속도
             yield return new WaitForSeconds(0.05f);
         }
+        // 대사 출력 완료
+        isTyping = false;
     }
 
     // 대사 출력 코루틴

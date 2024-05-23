@@ -1,7 +1,7 @@
 # 좋은 햄버거 맛있는 햄버거 | GoodBurger-DeliciousBurger
 고객님을 위한 하나뿐인 맛있는 햄버거를 만드는 게임 !
 ## 개요
-- 프로젝트 이름: GoodBurger-DeliciousBurger
+- 프로젝트 이름: 좋은 햄버거 맛있는 햄버거 (GoodBurger-DeliciousBurger)
 - 프로젝트 지속기간: 2024.03-
 - 개발 엔진 및 언어: Unity & C#
 - 멤버: 강효림, 김예은, 박희현

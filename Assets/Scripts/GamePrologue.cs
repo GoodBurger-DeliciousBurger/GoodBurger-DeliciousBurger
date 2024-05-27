@@ -5,8 +5,14 @@ using UnityEngine.UI;
 
 public class GamePrologue : MonoBehaviour
 {
+    // Image
+    public Image image;  // Image를 public으로 선언
+    public Sprite[] sprites;  // public으로 sprite 배열 선언
+    int imageIndex = 0; // sprite 배열의 순서, 첫 번째는 0부터 시작
+
+    // Text
     public TMP_Text prologueText;
-    string[] dialogues;
+    string[] dialogues; // 대사 배열로 선언
     int dialogueIndex = 0; // 현재 대사 인덱스
     bool isTyping = false; // 대사 출력 중인지 확인하는 플래그
 
@@ -21,16 +27,41 @@ public class GamePrologue : MonoBehaviour
             "매우 기대되는 부분입니다! 이기는 가게 우리팀!"
         };
 
+        // Image 컴포넌트가 할당되지 않은 경우 GetComponent를 통해 가져옴
+        if (image == null)
+        {
+            image = GetComponent<Image>();
+            if (image == null)
+            {
+                Debug.LogError("Image component is not assigned and could not be found on the GameObject.");
+                return;
+            }
+        }
+
         // 첫 번째 대사 자동 출력
         StartCoroutine(ShowDialogue());
     }
 
     void Update()
     {
-        // 터치 입력을 감지
+        // 화면 터치 입력을 감지
         if (Input.GetMouseButtonDown(0) && !isTyping && dialogueIndex < dialogues.Length)
         {
             StartCoroutine(ShowDialogue());
+        }
+
+        if (Input.GetMouseButtonDown(0))   // 마우스 왼쪽 버튼을 눌렀다 뗄 때
+        {
+            Debug.Log("click");
+            if (imageIndex < sprites.Length)  // 이미지 인덱스가 스프라이트 배열 길이를 초과하지 않는지 확인
+            {
+                image.sprite = sprites[imageIndex];  // image의 sprite를 불러와서 index 순으로 변경
+                imageIndex++; // index가 증가
+            }
+            else
+            {
+                Debug.LogWarning("No more images to display.");
+            }
         }
     }
 
@@ -39,7 +70,7 @@ public class GamePrologue : MonoBehaviour
     {
         // 대사 출력 중으로 설정
         isTyping = true;
-        // text null값으로 설정
+        // text를 null 값으로 설정
         prologueText.text = null;
         for (int i = 0; i < t.Length; i++)
         {

@@ -49,20 +49,6 @@ public class GamePrologue : MonoBehaviour
         {
             StartCoroutine(ShowDialogue());
         }
-
-        if (Input.GetMouseButtonDown(0))   // 마우스 왼쪽 버튼을 눌렀다 뗄 때
-        {
-            Debug.Log("click");
-            if (imageIndex < sprites.Length)  // 이미지 인덱스가 스프라이트 배열 길이를 초과하지 않는지 확인
-            {
-                image.sprite = sprites[imageIndex];  // image의 sprite를 불러와서 index 순으로 변경
-                imageIndex++; // index가 증가
-            }
-            else
-            {
-                Debug.LogWarning("No more images to display.");
-            }
-        }
     }
 
     // 텍스트 타이핑 효과
@@ -87,9 +73,15 @@ public class GamePrologue : MonoBehaviour
     {
         // 현재 대사 출력
         yield return StartCoroutine(Typing(dialogues[dialogueIndex]));
+
+        // 대사 인덱스가 1부터이면 이미지 변경
+        if (dialogueIndex > 0 && imageIndex < sprites.Length)
+        {
+            image.sprite = sprites[imageIndex];
+            imageIndex++;
+        }
+
         // 대사 인덱스 증가
         dialogueIndex++;
-        // 다음 대사 속도
-        yield return new WaitForSeconds(2.0f);
     }
 }

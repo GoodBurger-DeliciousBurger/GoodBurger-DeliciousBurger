@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bfb77ecd67d671046adda714a63c7c96
+guid: c93b87dd96eecb34c83832a32042e859
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2627561004729974136
-    second: under bread_0
+      213: 4105632817333502499
+    second: BoardTable_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: under bread_0
+      name: BoardTable_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 28
-        width: 242
-        height: 247
+        x: 0
+        y: 0
+        width: 573
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87d3998ffc8f67420800000000000000
-      internalID: 2627561004729974136
+      spriteID: 32289577b432af830800000000000000
+      internalID: 4105632817333502499
       vertices: []
       indices: 
       edges: []
@@ -143,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      under bread_0: 2627561004729974136
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

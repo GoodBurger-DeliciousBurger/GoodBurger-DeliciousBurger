@@ -287,7 +287,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Double Burger_0: -6442699389555409323
+      Double Burger_1: 3302512441607733251
+      Double Burger_2: -4072851047243540127
+      Double Burger_3: -306053922419262682
+      Double Burger_4: -4178445665350269194
+      Double Burger_5: -8995885293042600105
+      Double Burger_6: -4483740639594681564
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

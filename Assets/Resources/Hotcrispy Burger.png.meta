@@ -383,7 +383,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hotcrispy Burger_0: -7130591080959820160
+      Hotcrispy Burger_1: 5216838252214918996
+      Hotcrispy Burger_10: 4779178452797065846
+      Hotcrispy Burger_2: 4852791982076327910
+      Hotcrispy Burger_3: -6647525493564498943
+      Hotcrispy Burger_4: 6144713807568090483
+      Hotcrispy Burger_5: 2854850196211476694
+      Hotcrispy Burger_6: 1912292007858296195
+      Hotcrispy Burger_7: 3029364980706843449
+      Hotcrispy Burger_8: -4859507586674396846
+      Hotcrispy Burger_9: 1783854594897351425
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

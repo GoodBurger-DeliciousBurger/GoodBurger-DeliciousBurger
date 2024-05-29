@@ -376,7 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 997202711}
   sprites:
-  - {fileID: -336755431926087686, guid: 375a40fd400c6c042aa9b213edf6a82f, type: 3}
+  - {fileID: -336755431926087686, guid: 79313b2a7adc3ac4094db7eca0690c5f, type: 3}
   prologueText: {fileID: 1875821254}
 --- !u!4 &846598491
 Transform:
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2416250981060682396, guid: c861e284ae2be2642920b1e94a5b2222, type: 3}
+  m_Sprite: {fileID: 2416250981060682396, guid: be0b595ec014e3d42ba8a20b52a252ee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 1875821255}
   - component: {fileID: 1875821254}
   m_Layer: 5
-  m_Name: Text_1 (TMP)
+  m_Name: Dialogue (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,8 +702,8 @@ MonoBehaviour:
     \uAC1C\uC5C5\uD55C \u2018\uC88B\uC740 \uD584\uBC84\uAC70 \uB9DB\uC788\uB294 \uD584\uBC84\uAC70\u2019
     \uAC00\uAC8C\uC785\uB2C8\uB2E4 !"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 264446ea065a7734ca697465feccce54, type: 2}
-  m_sharedMaterial: {fileID: 1803659259659616612, guid: 264446ea065a7734ca697465feccce54, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3d561ac533b5d646938479183a7400a, type: 2}
+  m_sharedMaterial: {fileID: -7295624059432424201, guid: c3d561ac533b5d646938479183a7400a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -1460.8135, y: 0, z: 487.45557, w: 13.619019}
+  m_margin: {x: -1449.0332, y: 0, z: 502.0332, w: 13.619019}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 2027293494}
   - component: {fileID: 2027293493}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Skip (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

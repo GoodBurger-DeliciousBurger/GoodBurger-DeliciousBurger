@@ -287,7 +287,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bulgogi Burger_0: 7922028183339083727
+      Bulgogi Burger_1: 4351689712933310508
+      Bulgogi Burger_2: 9195376212482833241
+      Bulgogi Burger_3: 4715197894583030027
+      Bulgogi Burger_4: 7447192291759832457
+      Bulgogi Burger_5: -3460952118415325572
+      Bulgogi Burger_6: 7664826604944950243
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

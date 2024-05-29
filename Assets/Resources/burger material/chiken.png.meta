@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chiken_0: 3090341677885324903
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

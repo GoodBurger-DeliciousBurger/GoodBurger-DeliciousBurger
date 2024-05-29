@@ -565,7 +565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b6560a9981950428e625f06e1afb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressText: {fileID: 1692217089}
+  orderText: {fileID: 1692217089}
+  levelText: {fileID: 1174428481}
 --- !u!4 &1484586220
 Transform:
   m_ObjectHideFlags: 0

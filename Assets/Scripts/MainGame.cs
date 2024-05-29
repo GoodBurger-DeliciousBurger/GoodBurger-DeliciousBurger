@@ -6,13 +6,16 @@ using UnityEngine.UI;
 
 public class MainGame : MonoBehaviour
 {
-    public Text progressText;  // UI Text 요소를 연결하기 위한 변수
-    private int currentProgress = 1; // 주문수
-    private int totalProgress = 8; // 최대 주문
+    public Text orderText;  // UI Text 요소를 연결하기 위한 변수
+    public Text levelText;  // 레벨을 표시할 UI Text 요소 추가
+    private int currentOrder = 1; // 주문수
+    private int totalOrder = 8; // 최대 주문
+    private int currentLevel = 1; // 현재 레벨
 
     void Start()
     {
-        UpdateProgressText();
+        UpdateOrderText();
+        UpdateLevelText();
     }
 
     void Update()
@@ -31,23 +34,40 @@ public class MainGame : MonoBehaviour
     // 주문 수 증가 
     private void OnScreenTouch()
     {
-        if (currentProgress < totalProgress)
+        if (currentOrder < totalOrder)
         {
-            Debug.Log("OnScreenTouch!");
-            currentProgress++;
-            UpdateProgressText();
-        }
-    }
-
-    private void UpdateProgressText()
-    {
-        if (progressText != null)
-        {
-            progressText.text = currentProgress + "/" + totalProgress;
+            currentOrder++;
         }
         else
         {
-            Debug.LogError("Progress Text is not assigned!");
+            currentOrder = 1;
+            currentLevel++;
+            UpdateLevelText();
+        }
+        UpdateOrderText();
+    }
+
+    private void UpdateOrderText()
+    {
+        if (orderText != null)
+        {
+            orderText.text = currentOrder + "/" + totalOrder;
+        }
+        else
+        {
+            Debug.LogError("Order Text is not assigned!");
+        }
+    }
+
+    private void UpdateLevelText()
+    {
+        if (levelText != null)
+        {
+            levelText.text = "Lv " + currentLevel;
+        }
+        else
+        {
+            Debug.LogError("Level Text is not assigned!");
         }
     }
 }

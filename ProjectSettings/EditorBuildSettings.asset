@@ -20,5 +20,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RecipeScene.unity
     guid: ff7d39ea3b997b64a9dbf9c5788e8d3d
+  - enabled: 1
+    path: Assets/Scenes/GamePrologue.unity
+    guid: 05585e803d2a3314d84222d6bcd1f537
+  - enabled: 1
+    path: Assets/Scenes/MainGameScene.unity
+    guid: 3e7573a4e324f4648972e5912f2a4c4e
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

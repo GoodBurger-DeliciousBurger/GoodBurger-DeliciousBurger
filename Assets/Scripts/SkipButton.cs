@@ -21,7 +21,6 @@ public class SkipButtonScript : MonoBehaviour
     void OnSkipButtonClick()
     {
         Debug.Log("Skip button clicked!");
-        // TODO: 현재 메인씬이 없어서 다른 씬 넣어둠. 메인씬 생길 시 LoadScene 변경하기 
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainGameScene");
     }
 }

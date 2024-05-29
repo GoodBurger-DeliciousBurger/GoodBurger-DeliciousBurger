@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hot sauce_0: -3350435006515005354
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

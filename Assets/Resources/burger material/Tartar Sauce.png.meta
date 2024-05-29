@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tartar Sauce_0: 2724948623281536248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -84,5 +84,12 @@ public class GamePrologue : MonoBehaviour
 
         // 대사 인덱스 증가
         dialogueIndex++;
+
+        // 마지막 대사가 끝난 후 MainGameScene으로 이동
+        if (dialogueIndex >= dialogues.Length)
+        {
+            yield return new WaitForSeconds(1.0f);
+            SceneManager.LoadScene("MainGameScene");
+        }
     }
 }

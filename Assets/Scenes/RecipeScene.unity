@@ -4085,8 +4085,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a4fe109edb5204c98a521620d4698f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulgogiRecipePanel: {fileID: 1281868333}
-  CheeseRecipePanel: {fileID: 0}
 --- !u!1 &1327347100
 GameObject:
   m_ObjectHideFlags: 0

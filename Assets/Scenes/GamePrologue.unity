@@ -376,7 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 997202711}
   sprites:
-  - {fileID: -336755431926087686, guid: 79313b2a7adc3ac4094db7eca0690c5f, type: 3}
+  - {fileID: 7454755348880114065, guid: 79313b2a7adc3ac4094db7eca0690c5f, type: 3}
   prologueText: {fileID: 1875821254}
 --- !u!4 &846598491
 Transform:
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2416250981060682396, guid: be0b595ec014e3d42ba8a20b52a252ee, type: 3}
+  m_Sprite: {fileID: 1645922931837357186, guid: be0b595ec014e3d42ba8a20b52a252ee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

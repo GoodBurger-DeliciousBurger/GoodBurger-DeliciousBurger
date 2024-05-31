@@ -89,7 +89,7 @@ public class GamePrologue : MonoBehaviour
         if (dialogueIndex >= dialogues.Length)
         {
             yield return new WaitForSeconds(1.0f);
-            SceneManager.LoadScene("MainGameScene");
+            SceneManager.LoadScene("GameScene");
         }
     }
 }

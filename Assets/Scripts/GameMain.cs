@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainGame : MonoBehaviour
+public class GameMain : MonoBehaviour
 {
     public Text orderText;  // UI Text 요소를 연결하기 위한 변수
     public Text levelText;  // 레벨을 표시할 UI Text 요소 추가

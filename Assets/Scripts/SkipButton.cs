@@ -21,6 +21,6 @@ public class SkipButtonScript : MonoBehaviour
     void OnSkipButtonClick()
     {
         Debug.Log("Skip button clicked!");
-        SceneManager.LoadScene("MainGameScene");
+        SceneManager.LoadScene("GameScene");
     }
 }

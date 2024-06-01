@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8d779234f35916a4dbcf154f7cf75278
+guid: 10926aae2d22ba44b810640f78a34f05
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1946928209853375781
-    second: Char(1)_0
+      213: -6402990524908934589
+    second: GameRulesBtn (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Char(1)_0
+      name: GameRulesBtn (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 230
-        height: 304
+        width: 452
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bda9080cb1f1bf4e0800000000000000
-      internalID: -1946928209853375781
+      spriteID: 34a6c96ca020427a0800000000000000
+      internalID: -6402990524908934589
       vertices: []
       indices: 
       edges: []
@@ -130,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GameRulesBtn (1)_0: -6402990524908934589
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -15,7 +15,8 @@ public class GameMain : MonoBehaviour
     public Text levelText;  // 레벨을 표시할 UI Text 요소
 
     // Button
-    public Button yesBtn;
+    public Button yesBtn; // 주문 시 '네' 버튼
+    public Button noBtn; // 주문 시 '아니요' 버튼
 
     // 변수 선언
     private int currentOrder = 1; // 주문수
@@ -27,44 +28,23 @@ public class GameMain : MonoBehaviour
         characterImage.gameObject.SetActive(false); // 캐릭터 이미지 비활성화
         orderImage.gameObject.SetActive(false); // 음식 주문 이미지 비활성화
         yesBtn.gameObject.SetActive(false); // '네' 버튼 비활성화
+        noBtn.gameObject.SetActive(false); // '아니요' 버튼 비활성화
 
-        UpdateOrderText();
-        UpdateLevelText();
+/*        UpdateOrderText();
+        UpdateLevelText();*/
 
+        // '아니요' 버튼 누를 시 다시 주문 할 수 있는 코루틴
         StartCoroutine(ShowCharacterImageAfterDelay(2.5f));
 
         yesBtn.onClick.AddListener(OnYesButtonClick);
+        noBtn.onClick.AddListener(OnNoButtonClick);
     }
 
     void Update()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            OnScreenTouch();
-        }
-        else if (Input.GetMouseButtonDown(0))  // 마우스 클릭도 감지
-        {
-            OnScreenTouch();
-        }
+
     }
 
-    // TODO: '네' 버튼 구현 시 화면 터치하면 주문 증가대신, 네 버튼 누를 시 주문 수 증가로 변경
-    // 화면 터치 시 주문 수 증가 
-    private void OnScreenTouch()
-    {
-        if (currentOrder < totalOrder)
-        {
-            currentOrder++;
-        }
-        else
-        {
-            currentOrder = 1;
-            currentLevel++;
-            UpdateLevelText();
-        }
-        UpdateOrderText();
-    }
-    
     // 주문 수 증가 (text)
     private void UpdateOrderText()
     {
@@ -98,8 +78,9 @@ public class GameMain : MonoBehaviour
         if (characterImage != null)
         {
             characterImage.gameObject.SetActive(true); // 캐릭터 이미지를 활성화
-            orderImage.gameObject.SetActive(true); // 음식 주문 이미지 비활성화
+            orderImage.gameObject.SetActive(true); // 음식 주문 이미지 활성화
             yesBtn.gameObject.SetActive(true); // '네' 버튼 활성화
+            noBtn.gameObject.SetActive(true); // '아니요' 버튼 활성화
         }
         else
         {
@@ -110,6 +91,43 @@ public class GameMain : MonoBehaviour
     // 주문 시 '네' 버튼 
     void OnYesButtonClick()
     {
+        if (currentOrder < totalOrder)
+        {
+            currentOrder++;
+        }
+        else
+        {
+            currentOrder = 1;
+            currentLevel++;
+            UpdateLevelText();
+        }
+        UpdateOrderText();
+
+        // '네' 버튼 누를 시 주문대로 이동
         SceneManager.LoadScene("MainGameScene");
+    }
+
+    // 주문 시 '아니요' 버튼
+    void OnNoButtonClick()
+    {
+        StartCoroutine(HideAndShowImagesAfterDelay(2.5f));
+    }
+
+    // '아니요' 버튼 누를 시
+    private IEnumerator HideAndShowImagesAfterDelay(float delay)
+    {
+        // 이미지와 버튼들을 비활성화
+        characterImage.gameObject.SetActive(false);
+        orderImage.gameObject.SetActive(false);
+        yesBtn.gameObject.SetActive(false);
+        noBtn.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(delay);
+
+        // 이미지와 버튼들을 다시 활성화
+        characterImage.gameObject.SetActive(true);
+        orderImage.gameObject.SetActive(true);
+        yesBtn.gameObject.SetActive(true);
+        noBtn.gameObject.SetActive(true);
     }
 }

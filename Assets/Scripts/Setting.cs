@@ -15,9 +15,4 @@ public class Setting : MonoBehaviour
     {
         SettingPanel.SetActive(true);
     }
-
-    public void invisibleSettingPanel()
-    {
-        SettingPanel.SetActive(false);
-    }
 }

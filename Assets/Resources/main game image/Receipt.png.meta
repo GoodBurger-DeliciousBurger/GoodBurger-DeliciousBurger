@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 78d552ad1c6609e479aa115e8e4f8e2b
+guid: ea3ef5f574a958c4dae695537caa1798
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7075882791079392868
-    second: Receipt_0
+      213: -255815564783844012
+    second: Receipt 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Receipt_0
+      name: Receipt 1_0
       rect:
         serializedVersion: 2
-        x: 13
+        x: 0
         y: 3
-        width: 64
-        height: 83
+        width: 293
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 466369aa8e5923260800000000000000
-      internalID: 7075882791079392868
+      spriteID: 4550b056919237cf0800000000000000
+      internalID: -255815564783844012
       vertices: []
       indices: 
       edges: []
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Receipt_0: 7075882791079392868
+      Receipt 1_0: -255815564783844012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

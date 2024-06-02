@@ -13,6 +13,7 @@ public class GameMain : MonoBehaviour
     // Text
     public Text orderText;  // UI Text 요소를 연결하기 위한 변수
     public Text levelText;  // 레벨을 표시할 UI Text 요소
+    public Text orderMessageText; // 주문 메세지 텍스트
 
     // Button
     public Button yesBtn; // 주문 시 '네' 버튼
@@ -23,15 +24,22 @@ public class GameMain : MonoBehaviour
     private int totalOrder = 8; // 최대 주문
     private int currentLevel = 1; // 현재 레벨
 
+    // 랜덤 주문 메시지 배열
+    private string[] messages = { "띠드버거 주세욤 !!",
+        "새우가 드라마를 찍으면? 대하드라마 !! " + "하하 !! 새우버거 하나 주세요 !",
+        "아주 매운 햄버거 주세요 !",
+        "패티가 따블 !! 더블패티 하나요 !"};
+
     void Start()
     {
         characterImage.gameObject.SetActive(false); // 캐릭터 이미지 비활성화
         orderImage.gameObject.SetActive(false); // 음식 주문 이미지 비활성화
         yesBtn.gameObject.SetActive(false); // '네' 버튼 비활성화
         noBtn.gameObject.SetActive(false); // '아니요' 버튼 비활성화
+        orderMessageText.gameObject.SetActive(false); // 주문 메세지 텍스트 비활성화
 
-/*        UpdateOrderText();
-        UpdateLevelText();*/
+        /* UpdateOrderText();
+                UpdateLevelText(); */
 
         // '아니요' 버튼 누를 시 다시 주문 할 수 있는 코루틴
         StartCoroutine(ShowCharacterImageAfterDelay(2.5f));
@@ -81,6 +89,8 @@ public class GameMain : MonoBehaviour
             orderImage.gameObject.SetActive(true); // 음식 주문 이미지 활성화
             yesBtn.gameObject.SetActive(true); // '네' 버튼 활성화
             noBtn.gameObject.SetActive(true); // '아니요' 버튼 활성화
+            orderMessageText.gameObject.SetActive(true); // 주문 메시지 텍스트 활성화
+            UpdateOrderMessageText(); // 랜덤 메시지 설정
         }
         else
         {
@@ -121,6 +131,7 @@ public class GameMain : MonoBehaviour
         orderImage.gameObject.SetActive(false);
         yesBtn.gameObject.SetActive(false);
         noBtn.gameObject.SetActive(false);
+        orderMessageText.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(delay);
 
@@ -129,5 +140,20 @@ public class GameMain : MonoBehaviour
         orderImage.gameObject.SetActive(true);
         yesBtn.gameObject.SetActive(true);
         noBtn.gameObject.SetActive(true);
+        orderMessageText.gameObject.SetActive(true);
+        UpdateOrderMessageText(); // 랜덤 메시지 설정
+    }
+
+    // 랜덤으로 주문 메시지 설정
+    private void UpdateOrderMessageText()
+    {
+        if (orderMessageText != null)
+        {
+            orderMessageText.text = messages[Random.Range(0, messages.Length)];
+        }
+        else
+        {
+            Debug.LogError("Order Message Text is not assigned!");
+        }
     }
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3f9e859799295264ea9e2392b3ff43d2
+guid: ad896663331cad94ca58f5fe926948e0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4900756977395780027
-    second: YesBtn_0
+      213: 2173887176973512725
+    second: CuttingBoard_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: YesBtn_0
+      name: CuttingBoard_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 287
-        height: 110
+        x: 7
+        y: 67
+        width: 498
+        height: 378
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb94130718cf20440800000000000000
-      internalID: 4900756977395780027
+      spriteID: 5107845aed23b2e10800000000000000
+      internalID: 2173887176973512725
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      YesBtn_0: 4900756977395780027
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -514,7 +514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &66125518
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3132,7 +3132,7 @@ GameObject:
   - component: {fileID: 841228051}
   - component: {fileID: 841228050}
   m_Layer: 5
-  m_Name: "\uD56B\uC18C\uC2A4"
+  m_Name: "\uB370\uB9AC\uC57C\uB07C \uC18C\uC2A4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3190,7 +3190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD56B\uC18C\uC2A4"
+  m_Text: "\uB370\uB9AC\uC57C\uB07C \uC18C\uC2A4"
 --- !u!222 &841228051
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3269,7 +3269,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB370\uB9AC\uC57C\uB07C \uC18C\uC2A4"
+  m_Text: "\uD0C0\uB974\uD0C0\uB974 \uC18C\uC2A4\n"
 --- !u!222 &860180335
 CanvasRenderer:
   m_ObjectHideFlags: 0

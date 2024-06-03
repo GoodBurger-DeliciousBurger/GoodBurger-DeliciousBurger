@@ -25,10 +25,20 @@ public class GameMain : MonoBehaviour
     private int currentLevel = 1; // 현재 레벨
 
     // 랜덤 주문 메시지 배열
-    private string[] messages = { "띠드버거 주세욤 !!",
-        "새우가 드라마를 찍으면? 대하드라마 !! " + "하하 !! 새우버거 하나 주세요 !",
-        "아주 매운 햄버거 주세요 !",
-        "패티가 따블 !! 더블패티 하나요 !"};
+    private string[] messages = 
+        { 
+        "띠드버거 주세욤 !!", // 치즈 버거
+        "오늘은 느끼한게 땡기네요 치즈 버거 하나요", // 치즈 버거 번외 
+        "새우가 드라마를 찍으면? 대하드라마 !! " + "하하 !! 새우 버거 하나 주세요 !", // 새우 버거
+        "아주 매운 햄버거 주세요 !", // 핫크리스피 버거
+        "치킨 버거 주세요 !!", // 핫크리스피 버거 번외
+        "패티가 따블 !! 더블패티 하나요 !", // 더블패티 버거
+        "오늘은... 불고기 ! 불고기 버거 하나 부탁드려요 !", // 불고기 버거 
+        "기본 하나요 ! 데리버거인가?" // 불고기 버거 번외
+    };
+
+    // 캐릭터 이미지 배열
+    public Sprite[] characterSprites; // 여러 캐릭터 이미지들을 저장할 배열
 
     void Start()
     {
@@ -37,9 +47,6 @@ public class GameMain : MonoBehaviour
         yesBtn.gameObject.SetActive(false); // '네' 버튼 비활성화
         noBtn.gameObject.SetActive(false); // '아니요' 버튼 비활성화
         orderMessageText.gameObject.SetActive(false); // 주문 메세지 텍스트 비활성화
-
-        /* UpdateOrderText();
-                UpdateLevelText(); */
 
         // '아니요' 버튼 누를 시 다시 주문 할 수 있는 코루틴
         StartCoroutine(ShowCharacterImageAfterDelay(2.5f));
@@ -135,13 +142,7 @@ public class GameMain : MonoBehaviour
 
         yield return new WaitForSeconds(delay);
 
-        // 이미지와 버튼들을 다시 활성화
-        characterImage.gameObject.SetActive(true);
-        orderImage.gameObject.SetActive(true);
-        yesBtn.gameObject.SetActive(true);
-        noBtn.gameObject.SetActive(true);
-        orderMessageText.gameObject.SetActive(true);
-        UpdateOrderMessageText(); // 랜덤 메시지 설정
+        ShowRandomCharacterImage();
     }
 
     // 랜덤으로 주문 메시지 설정
@@ -154,6 +155,26 @@ public class GameMain : MonoBehaviour
         else
         {
             Debug.LogError("Order Message Text is not assigned!");
+        }
+    }
+
+    // 랜덤으로 캐릭터 이미지 설정
+    private void ShowRandomCharacterImage()
+    {
+        if (characterSprites != null && characterSprites.Length > 0)
+        {
+            characterImage.sprite = characterSprites[Random.Range(0, characterSprites.Length)];
+            characterImage.gameObject.SetActive(true); // 캐릭터 이미지를 활성화
+            orderImage.gameObject.SetActive(true); // 음식 주문 이미지 활성화
+            yesBtn.gameObject.SetActive(true); // '네' 버튼 활성화
+            noBtn.gameObject.SetActive(true); // '아니요' 버튼 활성화
+            orderMessageText.gameObject.SetActive(true); // 주문 메시지 텍스트 활성화
+
+            UpdateOrderMessageText(); // 랜덤 메시지 설정
+        }
+        else
+        {
+            Debug.LogError("Character Sprites array is not assigned or empty!");
         }
     }
 }

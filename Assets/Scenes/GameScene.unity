@@ -770,8 +770,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43.448822, y: 139.5}
-  m_SizeDelta: {x: 652.8978, y: 279}
+  m_AnchoredPosition: {x: 62.82139, y: 138.87817}
+  m_SizeDelta: {x: 629.4608, y: 347.4013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1365687854
 CanvasRenderer:
@@ -808,7 +808,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -851,6 +851,12 @@ MonoBehaviour:
   orderMessageText: {fileID: 1365687855}
   yesBtn: {fileID: 722989894}
   noBtn: {fileID: 2073497396}
+  characterSprites:
+  - {fileID: -1946928209853375781, guid: 8d779234f35916a4dbcf154f7cf75278, type: 3}
+  - {fileID: 1029848078961312858, guid: d25b6f277d6a58241b6a106a5e54927f, type: 3}
+  - {fileID: 5548203304138747017, guid: b06b99b7f9fa80d44ac6a47f5811b242, type: 3}
+  - {fileID: -6566502855203072281, guid: 8e48323f2d33a5a41821c3151ea7bdf8, type: 3}
+  - {fileID: 799398122721775271, guid: 008ea7e3343ff814c8aaf2eb744796de, type: 3}
 --- !u!4 &1484586220
 Transform:
   m_ObjectHideFlags: 0

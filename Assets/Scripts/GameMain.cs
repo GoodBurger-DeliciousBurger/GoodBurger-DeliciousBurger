@@ -48,9 +48,6 @@ public class GameMain : MonoBehaviour
         noBtn.gameObject.SetActive(false); // '아니요' 버튼 비활성화
         orderMessageText.gameObject.SetActive(false); // 주문 메세지 텍스트 비활성화
 
-        /* UpdateOrderText();
-                UpdateLevelText(); */
-
         // '아니요' 버튼 누를 시 다시 주문 할 수 있는 코루틴
         StartCoroutine(ShowCharacterImageAfterDelay(2.5f));
 
@@ -146,14 +143,6 @@ public class GameMain : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         ShowRandomCharacterImage();
-
-        // 이미지와 버튼들을 다시 활성화
-/*        characterImage.gameObject.SetActive(true);
-        orderImage.gameObject.SetActive(true);
-        yesBtn.gameObject.SetActive(true);
-        noBtn.gameObject.SetActive(true);
-        orderMessageText.gameObject.SetActive(true);
-        UpdateOrderMessageText(); // 랜덤 메시지 설정*/
     }
 
     // 랜덤으로 주문 메시지 설정

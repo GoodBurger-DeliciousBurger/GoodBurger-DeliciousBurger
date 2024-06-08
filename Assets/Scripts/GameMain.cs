@@ -20,13 +20,13 @@ public class GameMain : MonoBehaviour
     public Button noBtn; // 주문 시 '아니요' 버튼
 
     // 변수 선언
-    private int currentOrder = 1; // 주문수
+    private static int currentOrder = 0; // 주문수
+    private static int currentLevel = 1; // 현재 레벨
     private int totalOrder = 8; // 최대 주문
-    private int currentLevel = 1; // 현재 레벨
 
     // 랜덤 주문 메시지 배열
-    private string[] messages = 
-        { 
+    private string[] messages =
+        {
         "띠드버거 주세욤 !!", // 치즈 버거
         "오늘은 느끼한게 땡기네요 치즈 버거 하나요", // 치즈 버거 번외 
         "새우가 드라마를 찍으면? 대하드라마 !! " + "하하 !! 새우 버거 하나 주세요 !", // 새우 버거
@@ -42,6 +42,17 @@ public class GameMain : MonoBehaviour
 
     void Start()
     {
+        // 게임 처음 시작 또는 재시작 시 주문 수 초기화
+        if (PlayerPrefs.GetInt("GameStarted", 0) == 0)
+        {
+            currentOrder = 0;
+            currentLevel = 1;
+            PlayerPrefs.SetInt("GameStarted", 1);
+        }
+
+        UpdateOrderText();
+        UpdateLevelText();
+
         characterImage.gameObject.SetActive(false); // 캐릭터 이미지 비활성화
         orderImage.gameObject.SetActive(false); // 음식 주문 이미지 비활성화
         yesBtn.gameObject.SetActive(false); // '네' 버튼 비활성화
@@ -114,7 +125,7 @@ public class GameMain : MonoBehaviour
         }
         else
         {
-            currentOrder = 1;
+            currentOrder = 0;
             currentLevel++;
             UpdateLevelText();
         }
@@ -163,7 +174,7 @@ public class GameMain : MonoBehaviour
     {
         if (characterSprites != null && characterSprites.Length > 0)
         {
-            characterImage.sprite = characterSprites[Random.Range(0, characterSprites.Length)];
+            characterImage.sprite = characterSprites[Random.Range(0, characterSprites.Length)]; // 캐릭터 이미지 랜덤으로 설정
             characterImage.gameObject.SetActive(true); // 캐릭터 이미지를 활성화
             orderImage.gameObject.SetActive(true); // 음식 주문 이미지 활성화
             yesBtn.gameObject.SetActive(true); // '네' 버튼 활성화
@@ -176,5 +187,11 @@ public class GameMain : MonoBehaviour
         {
             Debug.LogError("Character Sprites array is not assigned or empty!");
         }
+    }
+
+    void OnApplicationQuit()
+    {
+        // 게임 종료 시 게임 상태 초기화
+        PlayerPrefs.SetInt("GameStarted", 0);
     }
 }

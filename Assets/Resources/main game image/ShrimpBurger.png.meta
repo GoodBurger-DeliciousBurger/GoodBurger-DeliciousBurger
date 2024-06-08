@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ShrimpBurger_0: -2594391486310058329
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

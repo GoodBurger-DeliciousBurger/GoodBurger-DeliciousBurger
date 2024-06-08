@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DoublePattyBurger_0: -346124852310610806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

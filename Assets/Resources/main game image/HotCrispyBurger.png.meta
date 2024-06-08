@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HotCrispyBurger_0: 7565710911312235172
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

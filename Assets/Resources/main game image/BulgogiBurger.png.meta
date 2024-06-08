@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BulgogiBurger_0: -4541846504148015384
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

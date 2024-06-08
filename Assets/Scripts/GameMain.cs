@@ -131,6 +131,9 @@ public class GameMain : MonoBehaviour
         }
         UpdateOrderText();
 
+        // 영수증에 주문 메시지 설정
+        ReceiptDetails.SetOrderMessage(orderMessageText.text);
+
         // '네' 버튼 누를 시 주문대로 이동
         SceneManager.LoadScene("MainGameScene");
     }

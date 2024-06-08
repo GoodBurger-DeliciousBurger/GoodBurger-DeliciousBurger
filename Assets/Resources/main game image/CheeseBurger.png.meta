@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CheeseBurger_0: 696733056425550480
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

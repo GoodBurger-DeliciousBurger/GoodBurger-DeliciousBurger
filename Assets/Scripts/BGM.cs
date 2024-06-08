@@ -10,9 +10,17 @@ public class BGM : MonoBehaviour
 
     void Awake()
     {
-        
-            DontDestroyOnLoad(audioSource); //배경음악 계속 재생하게(이후 버튼매니저에서 조작)
-        
+            DontDestroyOnLoad(audioSource); //배경음악 계속 재생하게
+    }
+
+    public void StopBGM()
+    {
+        audioSource.Stop();
+    }
+
+    public void StartBGM()
+    {
+        audioSource.Play();
     }
 
 }

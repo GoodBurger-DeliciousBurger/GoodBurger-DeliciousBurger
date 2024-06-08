@@ -37,7 +37,12 @@ public class ReceiptDetails : MonoBehaviour
         // 다른 오브젝트들의 상태 변경
         foreach (GameObject obj in movableObjects)
         {
-            obj.SetActive(false); // 이동 불가능하도록 비활성화
+            // 이동 가능하도록 콜라이더 활성화
+            Collider2D collider = obj.GetComponent<Collider2D>();
+            if (collider != null)
+            {
+                collider.enabled = false;
+            }
         }
     }
 
@@ -49,7 +54,12 @@ public class ReceiptDetails : MonoBehaviour
         // 다른 오브젝트들의 상태 변경
         foreach (GameObject obj in movableObjects)
         {
-            obj.SetActive(true); // 이동 가능하도록 활성화
+            // 이동 가능하도록 콜라이더 활성화
+            Collider2D collider = obj.GetComponent<Collider2D>();
+            if (collider != null)
+            {
+                collider.enabled = true;
+            }
         }
     }
 

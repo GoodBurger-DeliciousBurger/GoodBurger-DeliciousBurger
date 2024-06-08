@@ -7,7 +7,7 @@ public class Drag : MonoBehaviour
 {
     [SerializeField]
     private Transform materialPlace;
-    [HideInInspector]
+    [SerializeField]
     private List<GameObject> completedBreadPrefabs; // 완성된 bread 프리팹 리스트
 
     private Vector2 initialPosition;
@@ -191,8 +191,9 @@ public class Drag : MonoBehaviour
         }
 
         // 도달한 오브젝트들을 삭제
-        foreach (GameObject obj in reachedObjects)
+        foreach (GameObject obj in reachedObjectsList)
         {
+            lockedObjects[obj] = true;
             obj.SetActive(false);
         }
 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d55fc919a86a4ec4b844a330c6d11532
+guid: 94c908bcf764d6849853feec5fb65861
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4797070919850557394
-    second: Sount0 hover_0
+      213: -6350983030545000864
+    second: Rectangle 407_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sount0 hover_0
+      name: Rectangle 407_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 242
+        width: 330
         height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2083f31a616d6db0800000000000000
-      internalID: -4797070919850557394
+      spriteID: 066d4d92596ccd7a0800000000000000
+      internalID: -6350983030545000864
       vertices: []
       indices: 
       edges: []
@@ -143,8 +143,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Sount0 hover_0: -4797070919850557394
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

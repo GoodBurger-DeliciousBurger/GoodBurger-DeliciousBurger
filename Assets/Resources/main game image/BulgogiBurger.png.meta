@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ea3ef5f574a958c4dae695537caa1798
+guid: 6bb69ff32473c15478173e9a342005a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -255815564783844012
-    second: Receipt 1_0
+      213: -4541846504148015384
+    second: BulgogiBurger_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Receipt 1_0
+      name: BulgogiBurger_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3
-        width: 293
-        height: 110
+        x: 31
+        y: 90
+        width: 238
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4550b056919237cf0800000000000000
-      internalID: -255815564783844012
+      spriteID: 8e668ef0bae18f0c0800000000000000
+      internalID: -4541846504148015384
       vertices: []
       indices: 
       edges: []
@@ -143,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Receipt 1_0: -255815564783844012
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

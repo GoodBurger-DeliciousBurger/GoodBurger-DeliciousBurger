@@ -5,22 +5,21 @@ using UnityEngine;
 
 public class BGM : MonoBehaviour
 {
-    public AudioClip BackgroundMusic;
     public AudioSource audioSource;
 
     void Awake()
     {
-            DontDestroyOnLoad(audioSource); //배경음악 계속 재생하게
+        if (audioSource != null) DontDestroyOnLoad(audioSource); //배경음악 계속 재생하게
     }
 
     public void StopBGM()
     {
-        audioSource.Stop();
+        audioSource.Pause();
     }
 
     public void StartBGM()
     {
-        audioSource.Play();
+        audioSource.UnPause();
     }
 
 }

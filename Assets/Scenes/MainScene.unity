@@ -582,7 +582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d384f0125c9c6b41bf8b989db1bbe76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackgroundMusic: {fileID: 8300000, guid: 6757e6064f0e67c4aaa57ec871f5f5a0, type: 3}
   audioSource: {fileID: 782651887}
 --- !u!1 &798784505
 GameObject:
@@ -1061,7 +1060,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d384f0125c9c6b41bf8b989db1bbe76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackgroundMusic: {fileID: 8300000, guid: 6757e6064f0e67c4aaa57ec871f5f5a0, type: 3}
   audioSource: {fileID: 782651887}
 --- !u!1 &1499990272
 GameObject:
@@ -1567,7 +1565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d384f0125c9c6b41bf8b989db1bbe76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackgroundMusic: {fileID: 8300000, guid: 6757e6064f0e67c4aaa57ec871f5f5a0, type: 3}
   audioSource: {fileID: 782651887}
 --- !u!1 &1795103184
 GameObject:

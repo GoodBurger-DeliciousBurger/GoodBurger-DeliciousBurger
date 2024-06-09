@@ -10,7 +10,7 @@ public class BurgerRecipePanel: MonoBehaviour
     public GameObject ShrimpPanel;
     public GameObject DoublePanel;
 
-    // Start is called before the first frame update
+    // 레시피 패널 보기
     void Start()
     {
         Time.timeScale = 0;

@@ -1519,6 +1519,8 @@ MonoBehaviour:
   orderMessageText: {fileID: 1365687855}
   yesBtn: {fileID: 722989894}
   noBtn: {fileID: 2073497396}
+  currentLevel: 2
+  percent: 0
   characterSprites:
   - {fileID: -1946928209853375781, guid: 8d779234f35916a4dbcf154f7cf75278, type: 3}
   - {fileID: 1029848078961312858, guid: d25b6f277d6a58241b6a106a5e54927f, type: 3}

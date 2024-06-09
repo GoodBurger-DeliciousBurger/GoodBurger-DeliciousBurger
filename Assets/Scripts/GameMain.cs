@@ -23,7 +23,6 @@ public class GameMain : MonoBehaviour
     private static int currentOrder = 0; // 주문수
     private static int currentLevel = 1; // 현재 레벨
     private int totalOrder = 8; // 최대 주문
-    public int percent = 0; // 퍼센트
 
     // 랜덤 주문 메시지 배열
     private string[] messages =

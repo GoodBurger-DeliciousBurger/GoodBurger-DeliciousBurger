@@ -14,7 +14,6 @@ public class GoRecipeScene : MonoBehaviour
         SceneManager.LoadScene("RecipeScene");
     }
 
-    // 저장된 이전 씬으로 돌아가기
     public void GoBackPreviousScene()
     {
         if(!string.IsNullOrEmpty(previousScene))

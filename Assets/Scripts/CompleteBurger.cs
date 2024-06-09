@@ -4,18 +4,54 @@ using UnityEngine;
 
 public class CompleteBurger : MonoBehaviour
 {
+    [SerializeField]
+    private Transform materialPlace2;
 
     public static List<string> reachedObjects = new List<string>();
+    public static GameObject completedBread;
+
+    private bool isDragging = false;
+    private Vector2 initialPosition;
+    private Vector2 mousePosition;
+    private float mouseX, mouseY;
 
     // Start is called before the first frame update
     void Start()
     {
         ClearReachedObjects(); // Start 메서드에서 리스트를 초기화합니다.
+        initialPosition = transform.position;
     }
+
 
     public static void ClearReachedObjects()
     {
         reachedObjects.Clear();
+    }
+
+    private void OnMouseDown()
+    {
+        isDragging = true;
+        mouseX = Input.mousePosition.x - transform.position.x;
+        mouseY = Input.mousePosition.y - transform.position.y;
+    }
+
+    private void OnMouseDrag()
+    {
+        if (isDragging)
+        {
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = new Vector2(mousePosition.x - mouseX, mousePosition.y - mouseY);
+        }
+    }
+
+    private void OnMouseUp()
+    {
+        if (isDragging) return;
+        if (Mathf.Abs(transform.position.x - materialPlace2.position.x) <= 90.0f && Mathf.Abs(transform.position.y - materialPlace2.position.y) <= 90.0f)
+        {
+            transform.position = new Vector2(materialPlace2.position.x, materialPlace2.position.y);
+            isDragging = false;
+        }
     }
 
 
@@ -35,4 +71,5 @@ public class CompleteBurger : MonoBehaviour
             return null; // 예시로 null을 반환하였습니다. 적절한 프리팹을 반환하도록 수정해주세요.
         }
     }
+
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; // SceneManager를 사용하기 위해 필요
 
 public class Drag : MonoBehaviour
 {
@@ -16,8 +17,9 @@ public class Drag : MonoBehaviour
 
     private static Dictionary<GameObject, bool> lockedObjects = new Dictionary<GameObject, bool>();
     private static Dictionary<GameObject, Renderer> renderers = new Dictionary<GameObject, Renderer>();
-    private static List<string> reachedObjects = new List<string>(); // 도달한 오브젝트 리스트
     private static bool isCompleted = false; // 완성 여부를 체크하는 변수
+
+    private static List<GameObject> reachedCopies = new List<GameObject>();
 
     private void Awake()
     {
@@ -29,6 +31,9 @@ public class Drag : MonoBehaviour
         {
             renderers.Add(gameObject, renderer);
         }
+
+        // 씬이 로드될 때마다 ResetLockedStatus를 호출하도록 이벤트 등록
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void Start()
@@ -44,13 +49,12 @@ public class Drag : MonoBehaviour
         {
             lockedObjects.Add(obj, false);
         }
-        reachedObjects.Clear();
     }
 
     private void OnMouseDown()
     {
         // top_bread_0가 목표 위치에 도달했을 경우 다른 오브젝트들이 클릭되지 않도록 함
-        if (isCompleted || (reachedObjects.Contains("top bread_0")))
+        if (isCompleted || (CompleteBurger.reachedObjects.Contains("top bread_0")))
         {
             foreach (GameObject obj in GameObject.FindGameObjectsWithTag("material"))
             {
@@ -61,7 +65,7 @@ public class Drag : MonoBehaviour
 
         if (!lockedObjects[gameObject] && !isCompleted)
         {
-            if (!(reachedObjects.Contains("top bread_0")))
+            if (!(CompleteBurger.reachedObjects.Contains("top bread_0")))
             {
                 // 오브젝트 복사
                 GameObject duplicate = Instantiate(gameObject, transform.position, transform.rotation);
@@ -83,7 +87,6 @@ public class Drag : MonoBehaviour
                 // 원본 오브젝트를 원래 위치로 되돌리기
                 transform.position = initialPosition;
             }
-
         }
     }
 
@@ -124,9 +127,11 @@ public class Drag : MonoBehaviour
             }
 
             // 오브젝트가 목표 위치에 도달했음을 기록
-            reachedObjects.Add(gameObject.name);
+            CompleteBurger.reachedObjects.Add(gameObject.name);
+            reachedCopies.Add(gameObject); // 목표 위치에 도달한 오브젝트를 리스트에 추가
+
             // top_bread_0 오브젝트가 목표 위치에 도달했을 때 처리
-            if (gameObject.name == "top_bread_0")
+            if (gameObject.name == "top bread_0")
             {
                 CompleteBread();
             }
@@ -134,11 +139,10 @@ public class Drag : MonoBehaviour
         else
         {
             // 목표 위치에 도달하지 못한 오브젝트는 사라짐
-            if (isCompleted || !(reachedObjects.Contains("top bread_0")))
+            if (isCompleted || !(CompleteBurger.reachedObjects.Contains("top bread_0")))
             {
                 Destroy(gameObject);
             }
-            
         }
     }
 
@@ -172,53 +176,51 @@ public class Drag : MonoBehaviour
     {
         isCompleted = true;
 
-        // 목표 위치에 도달한 오브젝트만 그룹화
-        List<GameObject> reachedObjectsList = new List<GameObject>();
-        foreach (string objName in reachedObjects)
+        foreach (string reachedObject in CompleteBurger.reachedObjects)
         {
-            GameObject obj = GameObject.Find(objName);
-            if (obj != null)
+            Debug.Log(reachedObject);
+        }
+        transform.position = new Vector2(materialPlace.position.x - 50.0f, materialPlace.position.y);
+
+        // 완성된 bread 생성 (도달한 오브젝트 리스트를 기반으로 결정)
+        GameObject completedBreadPrefab = CompleteBurger.DetermineBreadType(completedBreadPrefabs);
+        if (completedBreadPrefab != null)
+        {
+            GameObject completedBread = Instantiate(completedBreadPrefab, transform.position, Quaternion.identity);
+
+            // Instantiate된 오브젝트의 sortingOrder를 높임
+            Renderer completedBreadRenderer = completedBread.GetComponent<Renderer>();
+            if (completedBreadRenderer != null)
             {
-                reachedObjectsList.Add(obj);
+                completedBreadRenderer.sortingOrder = GetMaxSortingOrder() + 1;
             }
         }
 
-        // 완성된 bread 생성 (도달한 오브젝트 리스트를 기반으로 결정)
-        GameObject completedBreadPrefab = DetermineBreadType();
-        if (completedBreadPrefab != null)
-        {
-            Instantiate(completedBreadPrefab, materialPlace.position, Quaternion.identity);
-        }
-
         // 도달한 오브젝트들을 삭제
-        foreach (GameObject obj in reachedObjectsList)
-        {
-            lockedObjects[obj] = true;
-            obj.SetActive(false);
-        }
+        CompleteBurger.reachedObjects.Clear();
 
         // 모든 오브젝트의 드래그 비활성화
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("material"))
         {
             obj.GetComponent<Drag>().enabled = false;
         }
+
+        // 목표 위치에 도달한 복사본 오브젝트 삭제
+        foreach (GameObject copy in reachedCopies)
+        {
+            Destroy(copy);
+        }
+        reachedCopies.Clear();
     }
 
-
-    private GameObject DetermineBreadType()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // bottom_bread, lettuce, top_bread 순서로 도달한 경우
-        if (reachedObjects.Count == 3 && reachedObjects[0] == "under bread_0" && reachedObjects[1] == "Lettuce_0" && reachedObjects[2] == "top bread_0")
-        {
-            // 예를 들어 bottom_bread, lettuce, top_bread 순서로 도달하면 CheeseBurger 프리팹 반환
-            return completedBreadPrefabs[0]; // 여기에는 CheeseBurger 프리팹을 넣어주세요.
-        }
-        // 그 외의 경우
-        else
-        {
-            // 다른 조합일 때는 다른 종류의 bread를 반환할 수 있습니다.
-            // 여기에는 다른 조합에 해당하는 프리팹을 넣어주세요.
-            return null; // 예시로 null을 반환하였습니다. 적절한 프리팹을 반환하도록 수정해주세요.
-        }
+        ResetLockedStatus();
+    }
+
+    private void OnDestroy()
+    {
+        // 이벤트 등록 해제
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

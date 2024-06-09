@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class GameMain : MonoBehaviour
 {
+    //참조
+    public static Score score;
+
     // Image
     public Image characterImage; // 캐릭터 이미지
     public Image orderImage; // 음식 주문 이미지
@@ -14,6 +17,7 @@ public class GameMain : MonoBehaviour
     public Text orderText;  // UI Text 요소를 연결하기 위한 변수
     public Text levelText;  // 레벨을 표시할 UI Text 요소
     public Text orderMessageText; // 주문 메세지 텍스트
+    public Text persentText; // 퍼센트 텍스트
 
     // Button
     public Button yesBtn; // 주문 시 '네' 버튼
@@ -23,6 +27,7 @@ public class GameMain : MonoBehaviour
     private static int currentOrder = 0; // 주문수
     private static int currentLevel = 1; // 현재 레벨
     private int totalOrder = 8; // 최대 주문
+    private static int updatePersent; // 퍼센트
 
     // 랜덤 주문 메시지 배열
     private string[] messages =
@@ -42,6 +47,8 @@ public class GameMain : MonoBehaviour
 
     void Start()
     {
+        score = GetComponent<Score>();
+
         // 게임 처음 시작 또는 재시작 시 주문 수 초기화
         if (PlayerPrefs.GetInt("GameStarted", 0) == 0)
         {
@@ -52,6 +59,7 @@ public class GameMain : MonoBehaviour
 
         UpdateOrderText();
         UpdateLevelText();
+        UpdatePersentText();
 
         characterImage.gameObject.SetActive(false); // 캐릭터 이미지 비활성화
         orderImage.gameObject.SetActive(false); // 음식 주문 이미지 비활성화
@@ -94,6 +102,26 @@ public class GameMain : MonoBehaviour
         else
         {
             Debug.LogError("Level Text is not assigned!");
+        }
+    }
+
+    // 퍼센트 받아오기
+    public static void SetPersent(int persent)
+    {
+        updatePersent = persent;
+        Debug.Log(persent);
+    }
+
+    // 퍼센트 출력 (text)
+    public void UpdatePersentText()
+    {
+        if (persentText != null)
+        {
+            persentText.text = updatePersent + "%";
+        }
+        else
+        {
+            Debug.LogError("persent Text is not assigned!");
         }
     }
 

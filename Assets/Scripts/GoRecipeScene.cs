@@ -5,18 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GoRecipeScene : MonoBehaviour
 {
+
     private static string previousScene;
-    
-    //현재 씬 이름 저장 후 다음 씬 전환
     public void GoRecipeBtn()
     {
         previousScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("RecipeScene");
     }
-
     public void GoBackPreviousScene()
     {
-        if(!string.IsNullOrEmpty(previousScene))
+        if (!string.IsNullOrEmpty(previousScene))
         {
             SceneManager.LoadScene(previousScene);
         }

@@ -167,7 +167,7 @@ public class Drag : MonoBehaviour
                     renderer_sauce.sortingOrder = maxSortingOrder + 1;
                 }
 
-                CompleteBurger.reachedObjects.Add(sauce.name);
+                CompleteBurger.reachedObjects.Add(gameObject.name.Replace("sauce", "").Trim());
                 reachedCopies.Add(sauce);
 
             }

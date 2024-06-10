@@ -15,7 +15,7 @@ public class Drag : MonoBehaviour
     private Vector2 mousePosition;
     private float mouseX, mouseY;
 
-    private static Dictionary<GameObject, Renderer> renderers = new Dictionary<GameObject, Renderer>();
+    public static Dictionary<GameObject, Renderer> renderers = new Dictionary<GameObject, Renderer>();
     private static bool isCompleted = false; // 완성 여부를 체크하는 변수
     private static Dictionary<GameObject, bool> lockedObjects = new Dictionary<GameObject, bool>();
     private static List<GameObject> reachedCopies = new List<GameObject>();

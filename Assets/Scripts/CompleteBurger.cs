@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +9,7 @@ public class CompleteBurger : MonoBehaviour
     public static List<string> reachedObjects = new List<string>();
     public static GameObject completedBread;
 
-    
+
     private bool isDragging;
     private Vector2 initialPosition;
     private Vector2 mousePosition;
@@ -38,8 +37,8 @@ public class CompleteBurger : MonoBehaviour
     {
         if (isDragging)
         {
-            mouseX = Input.mousePosition.x - transform.position.x;
-            mouseY = Input.mousePosition.y - transform.position.y;
+            mouseX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
+            mouseY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
         }
     }
 
@@ -89,7 +88,13 @@ public class CompleteBurger : MonoBehaviour
     public static GameObject DetermineBreadType(List<GameObject> completedBreadPrefabs)
     {
         // bottom_bread, lettuce, top_bread 순서로 도달한 경우
-        if (reachedObjects.Count == 3 && reachedObjects[0] == "under bread_0" && reachedObjects[1] == "Lettuce_0" && reachedObjects[2] == "top bread_0")
+        if (reachedObjects.Count == 6
+            && reachedObjects[0] == "under bread"
+            && reachedObjects[1] == "tomato"
+            && reachedObjects[2] == "patty"
+            && reachedObjects[3] == "teriyaki"
+            && reachedObjects[4] == "lettuce"
+            && reachedObjects[5] == "top bread")
         {
             // 예를 들어 bottom_bread, lettuce, top_bread 순서로 도달하면 CheeseBurger 프리팹 반환
             return completedBreadPrefabs[0]; // 여기에는 CheeseBurger 프리팹을 넣어주세요.

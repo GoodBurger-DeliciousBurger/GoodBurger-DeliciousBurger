@@ -1465,6 +1465,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!61 &570098474
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1863,7 +1867,7 @@ GameObject:
   - component: {fileID: 642742371}
   - component: {fileID: 642742372}
   m_Layer: 0
-  m_Name: Tartar_0
+  m_Name: tartar_0
   m_TagString: material
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1961,6 +1965,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!1 &715386539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,7 +1983,7 @@ GameObject:
   - component: {fileID: 715386542}
   m_Layer: 0
   m_Name: teriyaki sauce_0
-  m_TagString: Untagged
+  m_TagString: material
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2068,6 +2076,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!61 &715386543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2221,6 +2233,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!61 &733098372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3110,6 +3126,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!61 &978847059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3315,8 +3335,8 @@ GameObject:
   - component: {fileID: 994618802}
   - component: {fileID: 994618801}
   m_Layer: 0
-  m_Name: Tartar Sauce_0
-  m_TagString: Untagged
+  m_Name: tartar sauce_0
+  m_TagString: material
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3409,6 +3429,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!61 &994618802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3467,7 +3491,7 @@ GameObject:
   - component: {fileID: 1003436135}
   - component: {fileID: 1003436136}
   m_Layer: 0
-  m_Name: Hot_0
+  m_Name: hot_0
   m_TagString: material
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3565,6 +3589,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!1 &1004422561
 GameObject:
   m_ObjectHideFlags: 0
@@ -3844,6 +3872,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!61 &1149498800
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3904,7 +3936,7 @@ GameObject:
   - component: {fileID: 1176517004}
   m_Layer: 0
   m_Name: hot sauce_0
-  m_TagString: Untagged
+  m_TagString: material
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3997,6 +4029,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!61 &1176517005
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4337,7 +4373,7 @@ GameObject:
   - component: {fileID: 1351106118}
   - component: {fileID: 1351106117}
   m_Layer: 0
-  m_Name: Lettuce_0
+  m_Name: lettuce_0
   m_TagString: material
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4431,6 +4467,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!61 &1351106118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4869,7 +4909,7 @@ GameObject:
   - component: {fileID: 1517767877}
   - component: {fileID: 1517767878}
   m_Layer: 0
-  m_Name: Teriyaki_0
+  m_Name: teriyaki_0
   m_TagString: material
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4967,6 +5007,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!1 &1522814994
 GameObject:
   m_ObjectHideFlags: 0
@@ -5164,6 +5208,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!61 &1530505245
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5317,6 +5365,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!61 &1787571174
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5897,6 +5949,10 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
+  substituteObject:
+  - {fileID: 1517767875}
+  - {fileID: 642742369}
+  - {fileID: 1003436133}
 --- !u!61 &2095263694
 BoxCollider2D:
   m_ObjectHideFlags: 0

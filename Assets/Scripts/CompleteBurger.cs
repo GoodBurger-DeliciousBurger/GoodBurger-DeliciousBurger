@@ -10,10 +10,16 @@ public class CompleteBurger : MonoBehaviour
     public static List<string> reachedObjects = new List<string>();
     public static GameObject completedBread;
 
-    private bool isDragging = false;
+    
+    private bool isDragging;
     private Vector2 initialPosition;
     private Vector2 mousePosition;
     private float mouseX, mouseY;
+
+    private void Awake()
+    {
+        isDragging = true;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +36,11 @@ public class CompleteBurger : MonoBehaviour
 
     private void OnMouseDown()
     {
-        isDragging = true;
-        mouseX = Input.mousePosition.x - transform.position.x;
-        mouseY = Input.mousePosition.y - transform.position.y;
+        if (isDragging)
+        {
+            mouseX = Input.mousePosition.x - transform.position.x;
+            mouseY = Input.mousePosition.y - transform.position.y;
+        }
     }
 
     private void OnMouseDrag()
@@ -41,16 +49,39 @@ public class CompleteBurger : MonoBehaviour
         {
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector2(mousePosition.x - mouseX, mousePosition.y - mouseY);
+
+            Renderer renderer = GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                int maxSortingOrder = GetMaxSortingOrder();
+                renderer.sortingOrder = maxSortingOrder + 5;
+            }
         }
+    }
+    private int GetMaxSortingOrder()
+    {
+        int maxSortingOrder = 0;
+        foreach (KeyValuePair<GameObject, Renderer> pair in Drag.renderers)
+        {
+            if (pair.Value != null)
+            {
+                maxSortingOrder = Mathf.Max(maxSortingOrder, pair.Value.sortingOrder);
+            }
+        }
+        return maxSortingOrder;
     }
 
     private void OnMouseUp()
     {
-        if (isDragging) return;
-        if (Mathf.Abs(transform.position.x - materialPlace2.position.x) <= 90.0f && Mathf.Abs(transform.position.y - materialPlace2.position.y) <= 90.0f)
+        if (!isDragging) return;
+        if (Mathf.Abs(transform.position.x - materialPlace2.position.x) <= 100.0f && Mathf.Abs(transform.position.y - materialPlace2.position.y) <= 100.0f)
         {
             transform.position = new Vector2(materialPlace2.position.x, materialPlace2.position.y);
             isDragging = false;
+        }
+        else
+        {
+            transform.position = initialPosition;
         }
     }
 

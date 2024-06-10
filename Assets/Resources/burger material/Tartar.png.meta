@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 527270a2f91d7a3428bf940c94846a88
+guid: ac2ad6a0cbdaaa24f9f8d6865f9cefd8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4022057523586550399
-    second: ReceiptDetail_0
+      213: -2976798901646073569
+    second: Tartar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ReceiptDetail_0
+      name: Tartar_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 566
-        height: 656
+        x: 262
+        y: 455
+        width: 870
+        height: 771
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 185bf68fdf7ce28c0800000000000000
-      internalID: -4022057523586550399
+      spriteID: f11ec93bb2940b6d0800000000000000
+      internalID: -2976798901646073569
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      ReceiptDetail_0: -4022057523586550399
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

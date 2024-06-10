@@ -103,10 +103,10 @@ TextureImporter:
       name: WrongBurger_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 382
-        width: 1218
-        height: 622
+        x: 797
+        y: 259
+        width: 1221
+        height: 808
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -1453,7 +1453,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -1651,7 +1651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialPlace2: {fileID: 1004422562}
---- !u!1 &579870400
+--- !u!1 &580051360
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1659,39 +1659,98 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 579870401}
-  - component: {fileID: 579870402}
-  - component: {fileID: 579870404}
-  - component: {fileID: 579870403}
+  - component: {fileID: 580051361}
+  - component: {fileID: 580051364}
+  - component: {fileID: 580051363}
+  - component: {fileID: 580051362}
   m_Layer: 0
   m_Name: WrongBurger_0
-  m_TagString: completeburger
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &579870401
+--- !u!4 &580051361
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579870400}
+  m_GameObject: {fileID: 580051360}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1661.7274, y: -13.121, z: 0}
-  m_LocalScale: {x: 21.484535, y: 31.566376, z: 1}
+  m_LocalPosition: {x: -1649, y: 184, z: 0}
+  m_LocalScale: {x: 20.49408, y: 21.441153, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1897401164}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &579870402
+--- !u!114 &580051362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580051360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560b4d7c1036b434f8717194772677da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialPlace2: {fileID: 1004422562}
+--- !u!61 &580051363
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580051360}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.21, y: 8.080001}
+    newSize: {x: 12.21, y: 8.080001}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 12.21, y: 8.080001}
+  m_EdgeRadius: 0
+--- !u!212 &580051364
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579870400}
+  m_GameObject: {fileID: 580051360}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -1733,71 +1792,12 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.18, y: 6.22}
+  m_Size: {x: 12.21, y: 8.080001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &579870403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579870400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 560b4d7c1036b434f8717194772677da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  materialPlace2: {fileID: 1004422562}
---- !u!61 &579870404
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579870400}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.18, y: 6.22}
-    newSize: {x: 12.18, y: 6.22}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 12.18, y: 6.22}
-  m_EdgeRadius: 0
 --- !u!1 &607798066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2101,7 +2101,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -2213,7 +2213,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -2371,7 +2371,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -3265,7 +3265,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -3569,7 +3569,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -3730,7 +3730,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -4014,7 +4014,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -4172,7 +4172,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -4611,7 +4611,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -5152,7 +5152,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -5354,7 +5354,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -5512,7 +5512,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}
@@ -5851,7 +5851,7 @@ RectTransform:
   - {fileID: 737672779}
   - {fileID: 1500170201}
   - {fileID: 572394647}
-  - {fileID: 579870401}
+  - {fileID: 580051361}
   m_Father: {fileID: 607798070}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6098,7 +6098,7 @@ MonoBehaviour:
   - {fileID: 737672778}
   - {fileID: 1500170200}
   - {fileID: 572394646}
-  - {fileID: 579870400}
+  - {fileID: 580051360}
   substituteObject:
   - {fileID: 1517767875}
   - {fileID: 642742369}

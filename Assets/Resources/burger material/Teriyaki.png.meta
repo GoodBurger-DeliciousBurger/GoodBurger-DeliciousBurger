@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Teriyaki_0: 6265392568056450872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

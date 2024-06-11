@@ -9,12 +9,23 @@ public class Score : MonoBehaviour
     
     private ReceiptDetails receiptDetails;
 
-    public int persent = 90;
+    public static int persent = 90;
 
     void UpdatePersent()
     {
         persent = 90;
         GameMain.SetPersent(persent);
+    }
+
+
+    // ÇÜ¹ö°Å Ã¤Á¡
+    public static int CheckBurger(int persent)
+    {
+        if (Test2.completedBread)
+        {
+            persent += 10;
+        }
+        return persent;
     }
 
 

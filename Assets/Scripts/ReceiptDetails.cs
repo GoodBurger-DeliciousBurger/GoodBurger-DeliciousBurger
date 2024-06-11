@@ -8,7 +8,6 @@ public class ReceiptDetails : MonoBehaviour
     public Button imageButton;
     public Image image1;
     public Image image2;
-    public GameObject[] movableObjects;
     public Text orderMessageText; // 영수증에 표시할 주문 메시지 텍스트
 
     private static string orderMessage; // 주문 메시지를 저장할 정적 변수
@@ -46,7 +45,7 @@ public class ReceiptDetails : MonoBehaviour
         orderMessageText.text = orderMessage; // 주문 메시지 설정
 
         // 다른 오브젝트들의 상태 변경
-        foreach (GameObject obj in movableObjects)
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("material"))
         {
             // 이동 가능하도록 콜라이더 비활성화
             Collider2D collider = obj.GetComponent<Collider2D>();
@@ -64,7 +63,7 @@ public class ReceiptDetails : MonoBehaviour
         orderMessageText.gameObject.SetActive(false); // 주문 메시지 텍스트 비활성화
 
         // 다른 오브젝트들의 상태 변경
-        foreach (GameObject obj in movableObjects)
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("material"))
         {
             // 이동 가능하도록 콜라이더 활성화
             Collider2D collider = obj.GetComponent<Collider2D>();

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Test : MonoBehaviour
 {
@@ -25,5 +26,7 @@ public class Test : MonoBehaviour
             countdownTime--;  // 시간 감소
         }
         countdownText.text = "0 sec";  // 카운트다운이 끝나면 0 표시
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("GameScene");
     }
 }

@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WrongBurger_0: -271135417016825588
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

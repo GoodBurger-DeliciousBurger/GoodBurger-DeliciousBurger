@@ -97,6 +97,21 @@ public class CompleteBurger : MonoBehaviour
     private void OnMouseUp()
     {
         if (!isDragging) return;
+
+        // trashPlaces[0]의 중심 계산
+        Vector2 trashCenter0 = trashPlaces[0].transform.position;
+        bool isInTrash0 = Mathf.Abs(transform.position.x - trashCenter0.x) <= 250.0f && Mathf.Abs(transform.position.y - trashCenter0.y) <= 250.0f;
+
+        // trashPlaces[1]의 중심 계산
+        Vector2 trashCenter1 = trashPlaces[1].transform.position;
+        bool isInTrash1 = Mathf.Abs(transform.position.x - trashCenter1.x) <= 250.0f && Mathf.Abs(transform.position.y - trashCenter1.y) <= 250.0f;
+
+        // 햄버거가 trashPlaces[0] 또는 trashPlaces[1]에 있을 경우 삭제
+        if (isInTrash0 || isInTrash1)
+        {
+            Destroy(gameObject);
+        }
+
         if (Mathf.Abs(transform.position.x - materialPlace2.position.x) <= 100.0f && Mathf.Abs(transform.position.y - materialPlace2.position.y) <= 100.0f)
         {
             transform.position = new Vector2(materialPlace2.position.x, materialPlace2.position.y);

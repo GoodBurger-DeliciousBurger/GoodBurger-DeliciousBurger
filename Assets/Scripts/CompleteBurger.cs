@@ -1,19 +1,23 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CompleteBurger : MonoBehaviour
 {
     [SerializeField]
     private Transform materialPlace2;
+    [SerializeField]
+    private List<GameObject> trashPlaces; // trashPlace 리스트로 변경
 
     public static List<string> reachedObjects = new List<string>();
     public static GameObject completedBread;
-
 
     private bool isDragging;
     private Vector2 initialPosition;
     private Vector2 mousePosition;
     private float mouseX, mouseY;
+    private Dictionary<GameObject, Vector2> trashInitialPositions; // trashPlace 초기 위치 저장용
 
     private void Awake()
     {
@@ -25,8 +29,14 @@ public class CompleteBurger : MonoBehaviour
     {
         ClearReachedObjects(); // Start 메서드에서 리스트를 초기화합니다.
         initialPosition = transform.position;
-    }
+        trashInitialPositions = new Dictionary<GameObject, Vector2>();
 
+        // trashPlaces의 초기 위치 저장
+        foreach (var trashPlace in trashPlaces)
+        {
+            trashInitialPositions[trashPlace] = trashPlace.transform.position;
+        }
+    }
 
     public static void ClearReachedObjects()
     {
@@ -55,8 +65,22 @@ public class CompleteBurger : MonoBehaviour
                 int maxSortingOrder = GetMaxSortingOrder();
                 renderer.sortingOrder = maxSortingOrder + 5;
             }
+
+            // trashPlaces[1]의 중심 계산
+            Vector2 trashCenter = trashPlaces[1].transform.position;
+            if (Mathf.Abs(transform.position.x - trashCenter.x) <= 250.0f && Mathf.Abs(transform.position.y - trashCenter.y) <= 250.0f)
+            {
+                Vector2 targetPosition = trashInitialPositions[trashPlaces[1]] + Vector2.up * 40;
+                trashPlaces[1].transform.position = Vector2.Lerp(trashPlaces[1].transform.position, targetPosition, 0.1f);
+            }
+            else
+            {
+                // trashPlaces[1]가 원래 위치로 돌아오도록 설정
+                trashPlaces[1].transform.position = Vector2.Lerp(trashPlaces[1].transform.position, trashInitialPositions[trashPlaces[1]], 0.1f);
+            }
         }
     }
+
     private int GetMaxSortingOrder()
     {
         int maxSortingOrder = 0;
@@ -77,13 +101,16 @@ public class CompleteBurger : MonoBehaviour
         {
             transform.position = new Vector2(materialPlace2.position.x, materialPlace2.position.y);
             isDragging = false;
+            StartCoroutine(LoadGameSceneAfterDelay(1.5f));
         }
         else
         {
             transform.position = initialPosition;
         }
-    }
 
+        // trashPlaces[1]를 원래 위치로 되돌림
+        trashPlaces[1].transform.position = trashInitialPositions[trashPlaces[1]];
+    }
 
     public static GameObject DetermineBreadType(List<GameObject> completedBreadPrefabs)
     {
@@ -96,7 +123,7 @@ public class CompleteBurger : MonoBehaviour
             && reachedObjects[4] == "lettuce"
             && reachedObjects[5] == "top bread")
         {
-            return completedBreadPrefabs[0]; 
+            return completedBreadPrefabs[0];
         }
         else if (reachedObjects.Count == 6
             && reachedObjects[0] == "under bread"
@@ -146,4 +173,9 @@ public class CompleteBurger : MonoBehaviour
         }
     }
 
+    public IEnumerator LoadGameSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("GameScene");
+    }
 }

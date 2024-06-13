@@ -1070,7 +1070,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497603307}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1079,7 +1079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 853.8, y: 447}
+  m_AnchoredPosition: {x: 853.7964, y: 447.00317}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &497603310
@@ -2716,7 +2716,7 @@ GameObject:
   - component: {fileID: 768393240}
   - component: {fileID: 768393239}
   m_Layer: 5
-  m_Name: Setting
+  m_Name: Receipt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4922,9 +4922,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1847850736}
-  - component: {fileID: 1847850739}
   - component: {fileID: 1847850738}
   - component: {fileID: 1847850737}
+  - component: {fileID: 1847850739}
   m_Layer: 5
   m_Name: CountDown
   m_TagString: Untagged

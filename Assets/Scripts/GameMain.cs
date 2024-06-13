@@ -156,6 +156,13 @@ public class GameMain : MonoBehaviour
             currentOrder = 0;
             currentLevel++;
             UpdateLevelText();
+
+            // 레벨이 2가 되면 Level1EndingScene으로 전환
+            if (currentLevel == 2)
+            {
+                SceneManager.LoadScene("Level1EndingScene");
+                return; // 씬이 변경되면 아래 코드 실행 방지
+            }
         }
         UpdateOrderText();
 

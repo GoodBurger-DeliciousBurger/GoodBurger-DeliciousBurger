@@ -109,6 +109,8 @@ public class CompleteBurger : MonoBehaviour
         // 햄버거가 trashPlaces[0] 또는 trashPlaces[1]에 있을 경우 삭제
         if (isInTrash0 || isInTrash1)
         {
+            Drag.isCompleted = false;
+            Drag.ResetLockedStatus();
             Destroy(gameObject);
         }
 
@@ -116,7 +118,7 @@ public class CompleteBurger : MonoBehaviour
         {
             transform.position = new Vector2(materialPlace2.position.x, materialPlace2.position.y);
             isDragging = false;
-            StartCoroutine(LoadGameSceneAfterDelay(1.5f));
+            StartCoroutine(LoadGameSceneAfterDelay(0.8f));
         }
         else
         {

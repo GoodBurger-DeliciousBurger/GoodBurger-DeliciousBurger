@@ -13,7 +13,6 @@ public class BurgerRecipePanel: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0;
         BulgogiPanel.SetActive(false);
         CheesePanel.SetActive(false);
         HotCrispyPanel.SetActive(false);

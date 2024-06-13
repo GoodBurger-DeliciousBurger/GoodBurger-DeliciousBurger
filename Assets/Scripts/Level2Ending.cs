@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Level1Ending : MonoBehaviour
+public class Level2Ending : MonoBehaviour
 {
     // Image
     public Image image;  // Image를 public으로 선언

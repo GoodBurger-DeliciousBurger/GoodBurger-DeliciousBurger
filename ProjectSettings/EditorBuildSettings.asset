@@ -35,5 +35,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test2Scene.unity
     guid: d8e21424d3d12844db38c03d0890b2e6
+  - enabled: 1
+    path: Assets/Scenes/Level1EndingScene.unity
+    guid: 8d7038fef539d2d4684559b2b0733bc5
+  - enabled: 1
+    path: Assets/Scenes/Level2EndingScene.unity
+    guid: c1a0a6aa46e6b2c45bb47ff99e26c45a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

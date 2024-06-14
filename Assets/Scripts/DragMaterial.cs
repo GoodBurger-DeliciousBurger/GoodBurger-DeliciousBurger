@@ -26,7 +26,7 @@ public class Drag : MonoBehaviour
     private static Dictionary<GameObject, bool> lockedObjects = new Dictionary<GameObject, bool>();
     private static List<GameObject> reachedCopies = new List<GameObject>();
 
-    private static GameObject completedBreadPrefab;
+    public static GameObject completedBreadPrefab;
 
     public static string orderMessage; // 주문 메시지를 저장할 정적 변수
 
@@ -307,7 +307,7 @@ public class Drag : MonoBehaviour
     }
 
     // 레시피 별로 메뉴 체크해서 맞는지 판별
-    public static void checkOrder(int persent)
+    public static void checkOrder(int persent, string completedBreadPrefab)
     {
         if (string.IsNullOrEmpty(orderMessage))
         {
@@ -315,25 +315,26 @@ public class Drag : MonoBehaviour
             return;
         }
 
+        // 레시피에 맞는 햄버거
         if (orderMessage.Equals("오늘은... 불고기 ! 불고기 버거 하나 부탁드려요 !") || orderMessage.Equals("기본 하나요 ! 데리버거인가?"))
         {
-            if (completedBreadPrefab) persent = 10;  // 햄버거 완성
+            if (completedBreadPrefab.Equals("BulgogiBurger_0")) persent = 10;  // 햄버거 완성
         }
         else if (orderMessage.Equals("띠드버거 주세욤 !!") || orderMessage.Equals("오늘은 느끼한게 땡기네요 치즈 버거 하나요"))
         {
-            if (completedBreadPrefab) persent = 10;
+            if (completedBreadPrefab.Equals("CheeseBurger_0")) persent = 10;
         }
         else if (orderMessage.Equals("패티가 따블 !! 더블패티 하나요 !"))
         {
-            if (completedBreadPrefab) persent = 10;
+            if (completedBreadPrefab.Equals("DoublePattyBurger_0")) persent = 10;
         }
         else if (orderMessage.Equals("아주 매운 햄버거 주세요 !") || orderMessage.Equals("치킨 버거 주세요 !!"))
         {
-            if (completedBreadPrefab) persent = 10;
+            if (completedBreadPrefab.Equals("HotCrispyBurger_0")) persent = 10;
         }
         else if (orderMessage.Equals("새우가 드라마를 찍으면? 대하드라마 !! 하하 !! 새우 버거 하나 주세요 !"))
         {
-            if (completedBreadPrefab) persent = 10;
+            if (completedBreadPrefab.Equals("ShrimpBurger_0")) persent = 10;
         }
         GameMain.SetPersent(persent);
     }

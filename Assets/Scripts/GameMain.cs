@@ -53,6 +53,7 @@ public class GameMain : MonoBehaviour
         {
             currentOrder = 0;
             currentLevel = 1;
+            updatePersent = 0;
             PlayerPrefs.SetInt("GameStarted", 1);
         }
 

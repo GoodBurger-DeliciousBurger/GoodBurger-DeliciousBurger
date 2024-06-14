@@ -118,6 +118,7 @@ public class Drag : MonoBehaviour
         }
     }
     GameObject sauce;
+
     private void OnMouseUp()
     {
         if (isCompleted) return;
@@ -308,20 +309,11 @@ public class Drag : MonoBehaviour
     // 레시피 별로 메뉴 체크해서 맞는지 판별
     public static void checkOrder(int persent)
     {
-        Debug.Log(orderMessage);
-
         if (string.IsNullOrEmpty(orderMessage))
         {
             Debug.LogError("주문 메시지가 없습니다.");
             return;
         }
-
-        // completedBreadPrefabs가 null이 아니고 적어도 5개의 요소를 가지고 있는지 확인
-        /*if (completedBreadPrefabs == null || completedBreadPrefabs.Count < 5)
-        {
-            Debug.LogError("completedBreadPrefabs 리스트가 null이거나 요소가 부족합니다.");
-            return;
-        }*/
 
         if (orderMessage.Equals("오늘은... 불고기 ! 불고기 버거 하나 부탁드려요 !") || orderMessage.Equals("기본 하나요 ! 데리버거인가?"))
         {

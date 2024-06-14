@@ -19,7 +19,6 @@ public class CompleteBurger : MonoBehaviour
     private float mouseX, mouseY;
     private Dictionary<GameObject, Vector2> trashInitialPositions; // trashPlace 초기 위치 저장용
 
-
     private void Awake()
     {
         isDragging = true;

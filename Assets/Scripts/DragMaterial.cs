@@ -315,6 +315,16 @@ public class Drag : MonoBehaviour
             return;
         }
 
+
+        // 잘못된 햄버거
+        if (completedBreadPrefab.Equals("WrongBurger_0"))
+        {
+            persent = 5;
+            GameMain.SetPersent(persent);
+            return;
+        }
+
+
         // 레시피에 맞는 햄버거
         if (orderMessage.Equals("오늘은... 불고기 ! 불고기 버거 하나 부탁드려요 !") || orderMessage.Equals("기본 하나요 ! 데리버거인가?"))
         {

@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class GameMain : MonoBehaviour
 {
-    //참조
-    public static Score score;
 
     // Image
     public Image characterImage; // 캐릭터 이미지
@@ -27,7 +25,9 @@ public class GameMain : MonoBehaviour
     private static int currentOrder = 0; // 주문수
     private static int currentLevel = 1; // 현재 레벨
     private int totalOrder = 10; // 최대 주문
-    private static int updatePersent; // 퍼센트
+    private static int updatePersent = 0; // 퍼센트
+
+    public static int persent = 0;
 
     // 랜덤 주문 메시지 배열
     private string[] messages =
@@ -47,7 +47,6 @@ public class GameMain : MonoBehaviour
 
     void Start()
     {
-        score = GetComponent<Score>();
 
         // 게임 처음 시작 또는 재시작 시 주문 수 초기화
         if (PlayerPrefs.GetInt("GameStarted", 0) == 0)
@@ -76,7 +75,7 @@ public class GameMain : MonoBehaviour
 
     void Update()
     {
-
+        UpdatePersentText();
     }
 
     // 주문 수 증가 (text)
@@ -108,8 +107,8 @@ public class GameMain : MonoBehaviour
     // 퍼센트 받아오기
     public static void SetPersent(int persent)
     {
-        updatePersent = persent;
-        Debug.Log(persent);
+        updatePersent += persent;
+        Debug.Log(updatePersent);
     }
 
     // 퍼센트 출력 (text)
@@ -156,18 +155,13 @@ public class GameMain : MonoBehaviour
             currentOrder = 0;
             currentLevel++;
             UpdateLevelText();
-
-            // 레벨이 2가 되면 Level1EndingScene으로 전환
-            if (currentLevel == 2)
-            {
-                SceneManager.LoadScene("Level1EndingScene");
-                return; // 씬이 변경되면 아래 코드 실행 방지
-            }
         }
         UpdateOrderText();
 
         // 영수증에 주문 메시지 설정
         ReceiptDetails.SetOrderMessage(orderMessageText.text);
+        // 점수 판별을 위한 주문 설정
+        Drag.SetOrderMessage(orderMessageText.text);
 
         // '네' 버튼 누를 시 주문대로 이동
         SceneManager.LoadScene("MainGameScene");

@@ -77,7 +77,6 @@ public class Test2 : MonoBehaviour
         if (!isDragging) return;
         if (Mathf.Abs(transform.position.x - materialPlace2.position.x) <= 100.0f && Mathf.Abs(transform.position.y - materialPlace2.position.y) <= 100.0f)
         {
-            Score.CheckBurger(Score.persent);
             transform.position = new Vector2(materialPlace2.position.x, materialPlace2.position.y);
             isDragging = false;
             StartCoroutine(LoadGameSceneAfterDelay(1.5f)); // 1.5초 후에 씬 전환

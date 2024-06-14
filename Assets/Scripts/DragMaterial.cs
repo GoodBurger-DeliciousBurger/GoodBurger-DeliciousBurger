@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
+using UnityEditor.Presets;
 using UnityEngine;
 using UnityEngine.SceneManagement; // SceneManager를 사용하기 위해 필요
+using UnityEngine.UI;
 
 public class Drag : MonoBehaviour
 {
@@ -20,11 +22,14 @@ public class Drag : MonoBehaviour
     private int initialLayer;
 
     public static Dictionary<GameObject, Renderer> renderers = new Dictionary<GameObject, Renderer>();
-    public static bool isCompleted = false; // 완성 여부를 체크하는 변수
-    public static Dictionary<GameObject, bool> lockedObjects = new Dictionary<GameObject, bool>();
+    private static bool isCompleted = false; // 완성 여부를 체크하는 변수
+    private static Dictionary<GameObject, bool> lockedObjects = new Dictionary<GameObject, bool>();
     private static List<GameObject> reachedCopies = new List<GameObject>();
 
-    
+    private static GameObject completedBreadPrefab;
+
+    public static string orderMessage; // 주문 메시지를 저장할 정적 변수
+
     private void Awake()
     {
         ResetLockedStatus();
@@ -43,7 +48,7 @@ public class Drag : MonoBehaviour
         initialLayer = gameObject.layer;
     }
 
-    public static void ResetLockedStatus()
+    private void ResetLockedStatus()
     {
         // 모든 오브젝트의 잠금 상태를 초기화함
         lockedObjects.Clear();
@@ -72,7 +77,7 @@ public class Drag : MonoBehaviour
                 {
 
                     if (!gameObject.name.Contains("sauce"))
-                    { 
+                    {
                         // 오브젝트 복사
                         GameObject duplicate = Instantiate(gameObject, transform.position, transform.rotation);
                         duplicate.name = gameObject.name;
@@ -110,7 +115,7 @@ public class Drag : MonoBehaviour
                 int maxSortingOrder = GetMaxSortingOrder();
                 renderer.sortingOrder = maxSortingOrder + 1;
             }
-        } 
+        }
     }
     GameObject sauce;
     private void OnMouseUp()
@@ -143,16 +148,16 @@ public class Drag : MonoBehaviour
                     switch (gameObject.name)
                     {
                         case "teriyaki sauce":
-                            sauce=Instantiate(substituteObject[0], new Vector2(materialPlace.position.x - 50.0f, materialPlace.position.y), Quaternion.identity);
+                            sauce = Instantiate(substituteObject[0], new Vector2(materialPlace.position.x - 50.0f, materialPlace.position.y), Quaternion.identity);
                             break;
                         case "tartar sauce":
-                            sauce=Instantiate(substituteObject[1], new Vector2(materialPlace.position.x - 50.0f, materialPlace.position.y), Quaternion.identity);
+                            sauce = Instantiate(substituteObject[1], new Vector2(materialPlace.position.x - 50.0f, materialPlace.position.y), Quaternion.identity);
                             break;
                         case "hot sauce":
                             sauce = Instantiate(substituteObject[2], new Vector2(materialPlace.position.x - 50.0f, materialPlace.position.y), Quaternion.identity);
                             break;
                     }
-                   
+
                 }
                 Renderer renderer_sauce = sauce.GetComponent<Renderer>();
                 if (renderer_sauce != null && !renderers.ContainsKey(sauce))
@@ -287,11 +292,57 @@ public class Drag : MonoBehaviour
         transform.position = new Vector2(materialPlace.position.x - 50.0f, materialPlace.position.y);
 
         // 완성된 bread 생성 (도달한 오브젝트 리스트를 기반으로 결정)
-        GameObject completedBreadPrefab = CompleteBurger.DetermineBreadType(completedBreadPrefabs);
+        completedBreadPrefab = CompleteBurger.DetermineBreadType(completedBreadPrefabs);
         if (completedBreadPrefab != null)
         {
             CompleteBurger.completedBread = Instantiate(completedBreadPrefab, transform.position, Quaternion.identity);
         }
 
+    }
+
+    public static void SetOrderMessage(string message)
+    {
+        orderMessage = message;
+    }
+
+    // 레시피 별로 메뉴 체크해서 맞는지 판별
+    public static void checkOrder(int persent)
+    {
+        Debug.Log(orderMessage);
+
+        if (string.IsNullOrEmpty(orderMessage))
+        {
+            Debug.LogError("주문 메시지가 없습니다.");
+            return;
+        }
+
+        // completedBreadPrefabs가 null이 아니고 적어도 5개의 요소를 가지고 있는지 확인
+        /*if (completedBreadPrefabs == null || completedBreadPrefabs.Count < 5)
+        {
+            Debug.LogError("completedBreadPrefabs 리스트가 null이거나 요소가 부족합니다.");
+            return;
+        }*/
+
+        if (orderMessage.Equals("오늘은... 불고기 ! 불고기 버거 하나 부탁드려요 !") || orderMessage.Equals("기본 하나요 ! 데리버거인가?"))
+        {
+            if (completedBreadPrefab) persent = 10;  // 햄버거 완성
+        }
+        else if (orderMessage.Equals("띠드버거 주세욤 !!") || orderMessage.Equals("오늘은 느끼한게 땡기네요 치즈 버거 하나요"))
+        {
+            if (completedBreadPrefab) persent = 10;
+        }
+        else if (orderMessage.Equals("패티가 따블 !! 더블패티 하나요 !"))
+        {
+            if (completedBreadPrefab) persent = 10;
+        }
+        else if (orderMessage.Equals("아주 매운 햄버거 주세요 !") || orderMessage.Equals("치킨 버거 주세요 !!"))
+        {
+            if (completedBreadPrefab) persent = 10;
+        }
+        else if (orderMessage.Equals("새우가 드라마를 찍으면? 대하드라마 !! 하하 !! 새우 버거 하나 주세요 !"))
+        {
+            if (completedBreadPrefab) persent = 10;
+        }
+        GameMain.SetPersent(persent);
     }
 }

@@ -19,6 +19,7 @@ public class CompleteBurger : MonoBehaviour
     private float mouseX, mouseY;
     private Dictionary<GameObject, Vector2> trashInitialPositions; // trashPlace 초기 위치 저장용
 
+
     private void Awake()
     {
         isDragging = true;
@@ -109,16 +110,16 @@ public class CompleteBurger : MonoBehaviour
         // 햄버거가 trashPlaces[0] 또는 trashPlaces[1]에 있을 경우 삭제
         if (isInTrash0 || isInTrash1)
         {
-            Drag.isCompleted = false;
-            Drag.ResetLockedStatus();
             Destroy(gameObject);
         }
 
         if (Mathf.Abs(transform.position.x - materialPlace2.position.x) <= 100.0f && Mathf.Abs(transform.position.y - materialPlace2.position.y) <= 100.0f)
         {
+            // 햄버거 점수 채점 method
+            Drag.checkOrder(GameMain.persent);
             transform.position = new Vector2(materialPlace2.position.x, materialPlace2.position.y);
             isDragging = false;
-            StartCoroutine(LoadGameSceneAfterDelay(0.8f));
+            StartCoroutine(LoadGameSceneAfterDelay(1.5f));
         }
         else
         {

@@ -5,12 +5,27 @@ using UnityEngine.UI;
 
 public class ReceiptDetails : MonoBehaviour
 {
+    public static ReceiptDetails instance; // Singleton 인스턴스
+
     public Button imageButton;
     public Image image1;
     public Image image2;
     public Text orderMessageText; // 영수증에 표시할 주문 메시지 텍스트
 
-    private static string orderMessage; // 주문 메시지를 저장할 정적 변수
+    public static string orderMessage; // 주문 메시지를 저장할 정적 변수
+
+    // Singleton 패턴을 이용해 인스턴스 접근
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // 이미 인스턴스가 존재하면 중복 생성 방지
+        }
+    }
 
     // 주문 메시지를 설정하는 메서드
     public static void SetOrderMessage(string message)

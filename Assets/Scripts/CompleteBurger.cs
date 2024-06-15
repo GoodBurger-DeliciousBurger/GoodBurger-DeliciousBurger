@@ -19,7 +19,6 @@ public class CompleteBurger : MonoBehaviour
     private float mouseX, mouseY;
     private Dictionary<GameObject, Vector2> trashInitialPositions; // trashPlace 초기 위치 저장용
 
-
     private void Awake()
     {
         isDragging = true;
@@ -115,8 +114,6 @@ public class CompleteBurger : MonoBehaviour
 
         if (Mathf.Abs(transform.position.x - materialPlace2.position.x) <= 100.0f && Mathf.Abs(transform.position.y - materialPlace2.position.y) <= 100.0f)
         {
-            // 햄버거 점수 채점 method
-            Drag.checkOrder(GameMain.persent);
             transform.position = new Vector2(materialPlace2.position.x, materialPlace2.position.y);
             isDragging = false;
             StartCoroutine(LoadGameSceneAfterDelay(1.5f));
@@ -132,6 +129,7 @@ public class CompleteBurger : MonoBehaviour
 
     public static GameObject DetermineBreadType(List<GameObject> completedBreadPrefabs)
     {
+        string completedBreadPrefab;
         // bottom_bread, lettuce, top_bread 순서로 도달한 경우
         if (reachedObjects.Count == 6
             && reachedObjects[0] == "under bread"
@@ -141,6 +139,8 @@ public class CompleteBurger : MonoBehaviour
             && reachedObjects[4] == "lettuce"
             && reachedObjects[5] == "top bread")
         {
+            completedBreadPrefab = completedBreadPrefabs[0].name;
+            Drag.checkOrder(GameMain.persent, completedBreadPrefab);
             return completedBreadPrefabs[0];
         }
         else if (reachedObjects.Count == 6
@@ -151,6 +151,8 @@ public class CompleteBurger : MonoBehaviour
             && reachedObjects[4] == "lettuce"
             && reachedObjects[5] == "top bread")
         {
+            completedBreadPrefab = completedBreadPrefabs[1].name;
+            Drag.checkOrder(GameMain.persent, completedBreadPrefab);
             return completedBreadPrefabs[1];
         }
         else if (reachedObjects.Count == 8
@@ -163,6 +165,8 @@ public class CompleteBurger : MonoBehaviour
             && reachedObjects[6] == "lettuce"
             && reachedObjects[7] == "top bread")
         {
+            completedBreadPrefab = completedBreadPrefabs[2].name;
+            Drag.checkOrder(GameMain.persent, completedBreadPrefab);
             return completedBreadPrefabs[2];
         }
         else if (reachedObjects.Count == 6
@@ -173,6 +177,8 @@ public class CompleteBurger : MonoBehaviour
             && reachedObjects[4] == "lettuce"
             && reachedObjects[5] == "top bread")
         {
+            completedBreadPrefab = completedBreadPrefabs[3].name;
+            Drag.checkOrder(GameMain.persent, completedBreadPrefab);
             return completedBreadPrefabs[3];
         }
         else if (reachedObjects.Count == 6
@@ -183,10 +189,14 @@ public class CompleteBurger : MonoBehaviour
             && reachedObjects[4] == "lettuce"
             && reachedObjects[5] == "top bread")
         {
+            completedBreadPrefab = completedBreadPrefabs[4].name;
+            Drag.checkOrder(GameMain.persent, completedBreadPrefab);
             return completedBreadPrefabs[4];
         }
         else
         {
+            completedBreadPrefab = completedBreadPrefabs[5].name;
+            Drag.checkOrder(GameMain.persent, completedBreadPrefab);
             return completedBreadPrefabs[5];
         }
     }

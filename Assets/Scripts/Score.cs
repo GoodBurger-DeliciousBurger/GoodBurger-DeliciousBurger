@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
     /*private int InTime(int persent)
     {
         if () {  // 시간안에 만들지 못했나
-
+     
         }
         else // 시간안에 만듬
         {

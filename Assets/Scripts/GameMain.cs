@@ -67,7 +67,7 @@ public class GameMain : MonoBehaviour
         orderMessageText.gameObject.SetActive(false); // 주문 메세지 텍스트 비활성화
 
         // '아니요' 버튼 누를 시 다시 주문 할 수 있는 코루틴
-        StartCoroutine(ShowCharacterImageAfterDelay(2.5f));
+        StartCoroutine(ShowCharacterImageAfterDelay(1f));
 
         yesBtn.onClick.AddListener(OnYesButtonClick);
         noBtn.onClick.AddListener(OnNoButtonClick);
@@ -170,7 +170,7 @@ public class GameMain : MonoBehaviour
     // 주문 시 '아니요' 버튼
     void OnNoButtonClick()
     {
-        StartCoroutine(HideAndShowImagesAfterDelay(2.5f));
+        StartCoroutine(HideAndShowImagesAfterDelay(1f));
     }
 
     // '아니요' 버튼 누를 시

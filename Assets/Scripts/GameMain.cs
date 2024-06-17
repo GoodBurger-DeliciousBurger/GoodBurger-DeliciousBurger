@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GameMain : MonoBehaviour
 {
-
     // Image
     public Image characterImage; // 캐릭터 이미지
     public Image orderImage; // 음식 주문 이미지
@@ -100,11 +99,11 @@ public class GameMain : MonoBehaviour
             levelText.text = "Lv " + currentLevel;
 
             // 레벨2가 되면 퍼센트 초기화
-            if(currentLevel == 2)
+            if (currentLevel == 2)
             {
                 updatePersent = 0;
             }
-            
+
         }
         else
         {
@@ -126,16 +125,11 @@ public class GameMain : MonoBehaviour
         {
             persentText.text = updatePersent + "%";
 
-            // 레벨업이 될 점수
-            if (updatePersent >= 30)
+            // 레벨업이 될 점수 
+            if (updatePersent >= 100)
             {
                 currentLevel = 2;
                 UpdateLevelText();
-            }
-
-            if(currentOrder==10 && updatePersent < 80)
-            {
-                SceneManager.LoadScene("Level1EndingScene");
             }
         }
         else
@@ -144,12 +138,28 @@ public class GameMain : MonoBehaviour
         }
     }
 
-    // 고객 이미지 n초 후 나타남
+    // 고객 이미지가 n초 후에 나타남
     private IEnumerator ShowCharacterImageAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+
         if (characterImage != null)
         {
+            // 점수가 90퍼미만이면서 레벨1이면 레벨1 엔딩씬으로 이동
+            if (currentOrder == totalOrder && updatePersent < 90 && currentLevel == 1)
+            {
+                SceneManager.LoadScene("Level1EndingScene");
+            }
+            else if (currentOrder == totalOrder)
+            {
+                currentLevel++;
+                currentOrder = 0;
+                UpdateLevelText();
+                UpdateOrderText();
+            }
+
+            ShowRandomCharacterImage(); // 캐릭터 이미지를 활성화하는 로직을 함수로 분리
+
             characterImage.gameObject.SetActive(true); // 캐릭터 이미지를 활성화
             orderImage.gameObject.SetActive(true); // 음식 주문 이미지 활성화
             yesBtn.gameObject.SetActive(true); // '네' 버튼 활성화
@@ -172,9 +182,9 @@ public class GameMain : MonoBehaviour
         }
         else
         {
-            currentOrder = 0;
             currentLevel++;
-            //UpdateLevelText();
+            currentOrder = 0;
+            UpdateLevelText();
         }
         UpdateOrderText();
 

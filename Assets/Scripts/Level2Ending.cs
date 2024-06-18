@@ -116,7 +116,7 @@ public class Level2Ending : MonoBehaviour
         if (dialogueIndex >= dialogues.Length)
         {
             yield return new WaitForSeconds(1.0f);
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("EndingScene");
         }
     }
 }

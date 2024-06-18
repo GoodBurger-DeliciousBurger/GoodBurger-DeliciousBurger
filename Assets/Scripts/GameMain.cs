@@ -98,11 +98,7 @@ public class GameMain : MonoBehaviour
         {
             levelText.text = "Lv " + currentLevel;
 
-            // 레벨2가 되면 퍼센트 초기화
-            if (currentLevel == 2)
-            {
-                updatePersent = 0;
-            }
+           
 
         }
         else
@@ -123,14 +119,12 @@ public class GameMain : MonoBehaviour
     {
         if (persentText != null)
         {
-            persentText.text = updatePersent + "%";
-
-            // 레벨업이 될 점수 
-            if (updatePersent >= 100)
+            // 레벨2가 되면 퍼센트 초기화
+            if (currentLevel == 2 && currentOrder == 0)
             {
-                currentLevel = 2;
-                UpdateLevelText();
+                updatePersent = 0;
             }
+            persentText.text = updatePersent + "%";
         }
         else
         {
@@ -184,7 +178,7 @@ public class GameMain : MonoBehaviour
         {
             currentLevel++;
             currentOrder = 0;
-            UpdateLevelText();
+            //UpdateLevelText();
         }
         UpdateOrderText();
 

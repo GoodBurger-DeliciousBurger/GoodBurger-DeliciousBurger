@@ -97,9 +97,6 @@ public class GameMain : MonoBehaviour
         if (levelText != null)
         {
             levelText.text = "Lv " + currentLevel;
-
-           
-
         }
         else
         {
@@ -143,6 +140,10 @@ public class GameMain : MonoBehaviour
             if (currentOrder == totalOrder && updatePersent < 90 && currentLevel == 1)
             {
                 SceneManager.LoadScene("Level1EndingScene");
+            }
+            else if (currentOrder == totalOrder && updatePersent < 90 && currentLevel == 2)
+            {
+                SceneManager.LoadScene("Level2EndingScene");
             }
             else if (currentOrder == totalOrder)
             {

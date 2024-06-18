@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -140,10 +141,12 @@ public class GameMain : MonoBehaviour
             if (currentOrder == totalOrder && updatePersent < 90 && currentLevel == 1)
             {
                 SceneManager.LoadScene("Level1EndingScene");
+                OnApplicationQuit();
             }
             else if (currentOrder == totalOrder && updatePersent < 90 && currentLevel == 2)
             {
                 SceneManager.LoadScene("Level2EndingScene");
+                OnApplicationQuit();
             }
             else if (currentOrder == totalOrder)
             {

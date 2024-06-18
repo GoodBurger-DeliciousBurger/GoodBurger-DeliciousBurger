@@ -86,10 +86,6 @@ public class GameMain : MonoBehaviour
         {
             orderText.text = currentOrder + "/" + totalOrder;
         }
-        else
-        {
-            Debug.LogError("Order Text is not assigned!");
-        }
     }
 
     // 레벨 증가 (text)
@@ -98,10 +94,6 @@ public class GameMain : MonoBehaviour
         if (levelText != null)
         {
             levelText.text = "Lv " + currentLevel;
-        }
-        else
-        {
-            Debug.LogError("Level Text is not assigned!");
         }
     }
 

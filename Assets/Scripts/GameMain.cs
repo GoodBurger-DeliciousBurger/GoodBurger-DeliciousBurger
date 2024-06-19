@@ -47,7 +47,7 @@ public class GameMain : MonoBehaviour
 
     void Start()
     {
-
+        Test.countdownTime = 30;
         // 게임 처음 시작 또는 재시작 시 주문 수 초기화
         if (PlayerPrefs.GetInt("GameStarted", 0) == 0)
         {

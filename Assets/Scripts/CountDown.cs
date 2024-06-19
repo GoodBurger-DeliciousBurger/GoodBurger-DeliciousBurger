@@ -7,7 +7,7 @@ public class Test : MonoBehaviour
 {
     public Text countdownText;  // Countdown을 표시할 Text
     public Button receiptBtn;   // 버튼을 참조하기 위한 변수
-    private int countdownTime = 30;  // 초기 시간
+    public static int countdownTime = 30;  // 초기 시간
     private const string SavedTimeKey = "SavedTime";  // PlayerPrefs 키
 
     void Start()
@@ -15,7 +15,12 @@ public class Test : MonoBehaviour
         // 저장된 시간이 있는 경우 불러와서 countdownTime을 초기화
         if (PlayerPrefs.HasKey(SavedTimeKey))
         {
-            countdownTime = PlayerPrefs.GetInt(SavedTimeKey);
+            countdownTime = PlayerPrefs.GetInt(SavedTimeKey, 30);
+            PlayerPrefs.DeleteKey(SavedTimeKey); // 저장된 시간 삭제
+        }
+        else
+        {
+            countdownTime = 30;  // 저장된 시간이 없으면 30초로 초기화
         }
 
         if (countdownText != null)

@@ -2,15 +2,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class RetryButtonScript : MonoBehaviour
+public class GameHomeButtonScript : MonoBehaviour
 {
-    public Button retryButton;
+    public Button homeButton;
 
    void Start()
     {
-        if (retryButton != null)
+        if (homeButton != null)
         {
-            retryButton.onClick.AddListener(OnSkipButtonClick);
+            homeButton.onClick.AddListener(OnSkipButtonClick);
         }
         else
         {

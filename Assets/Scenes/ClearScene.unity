@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 1515220533}
   - component: {fileID: 1515220536}
   m_Layer: 5
-  m_Name: GameRetryBtn
+  m_Name: GameHomeBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1797150846062319144, guid: 5fdc79e4b3b5f8445b175fc931963d42, type: 3}
+  m_Sprite: {fileID: 2105551155740215808, guid: 29b4da8241d0356479ea4ee523f9c92a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -671,10 +671,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1515220531}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 592246c67919cf44ca235b1a1022cee5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d8fb74e7ce584f42ba313dd13d11ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  retryButton: {fileID: 1515220533}
+  homeButton: {fileID: 1515220533}
 --- !u!1 &1984603212
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +735,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3074712795068796413, guid: ae82da6cf1f7e7b4cbdb2ee940192884, type: 3}
+  m_Sprite: {fileID: 1536380896892045753, guid: d361a7260b527494eaf0289b9b8e8085, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -135,11 +135,19 @@ public class GameMain : MonoBehaviour
                 SceneManager.LoadScene("Level1EndingScene");
                 OnApplicationQuit();
             }
+            // 점수가 90퍼미만이면서 레벨2이면 레벨2 엔딩씬으로 이동
             else if (currentOrder == totalOrder && updatePersent < 90 && currentLevel == 2)
             {
                 SceneManager.LoadScene("Level2EndingScene");
                 OnApplicationQuit();
             }
+            // 점수가 90퍼보다 크거나 같고, 레벨2이면 클리어씬으로 이동
+            else if (currentOrder == totalOrder && updatePersent >= 90 && currentLevel == 2)
+            {
+                SceneManager.LoadScene("ClearScene");
+                OnApplicationQuit();
+            }
+            // 현재 주문 수와 최대 주문 수가 같으면 레벨 증가
             else if (currentOrder == totalOrder)
             {
                 currentLevel++;
@@ -182,7 +190,6 @@ public class GameMain : MonoBehaviour
         ReceiptDetails.SetOrderMessage(orderMessageText.text);
         // 점수 판별을 위한 주문 설정
         Drag.SetOrderMessage(orderMessageText.text);
-
         // '네' 버튼 누를 시 주문대로 이동
         SceneManager.LoadScene("MainGameScene");
     }

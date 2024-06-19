@@ -123,7 +123,7 @@ public class CompleteBurger : MonoBehaviour
             Drag.checkOrder(GameMain.persent, completedBreadPrefab);
             transform.position = new Vector2(materialPlace2.position.x, materialPlace2.position.y);
             isDragging = false;
-            StartCoroutine(LoadGameSceneAfterDelay(1.5f));
+            StartCoroutine(LoadGameSceneAfterDelay(0.5f));
         }
         else
         {

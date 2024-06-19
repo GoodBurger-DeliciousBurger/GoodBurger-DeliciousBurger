@@ -110,8 +110,11 @@ public class CompleteBurger : MonoBehaviour
         if (isInTrash0 || isInTrash1)
         {
             Destroy(gameObject);
+            Drag.isCompleted = false;
+            Drag.ResetLockedStatus();
         }
 
+        //목표위치에 도달하면 1.5f초 뒤에 주문 씬으로 이동
         if (Mathf.Abs(transform.position.x - materialPlace2.position.x) <= 100.0f && Mathf.Abs(transform.position.y - materialPlace2.position.y) <= 100.0f)
         {
             transform.position = new Vector2(materialPlace2.position.x, materialPlace2.position.y);

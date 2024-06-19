@@ -22,7 +22,7 @@ public class Drag : MonoBehaviour
     private int initialLayer;
 
     public static Dictionary<GameObject, Renderer> renderers = new Dictionary<GameObject, Renderer>();
-    private static bool isCompleted = false; // 완성 여부를 체크하는 변수
+    public static bool isCompleted = false; // 완성 여부를 체크하는 변수
     private static Dictionary<GameObject, bool> lockedObjects = new Dictionary<GameObject, bool>();
     private static List<GameObject> reachedCopies = new List<GameObject>();
 
@@ -48,7 +48,7 @@ public class Drag : MonoBehaviour
         initialLayer = gameObject.layer;
     }
 
-    private void ResetLockedStatus()
+    public static void ResetLockedStatus()
     {
         // 모든 오브젝트의 잠금 상태를 초기화함
         lockedObjects.Clear();

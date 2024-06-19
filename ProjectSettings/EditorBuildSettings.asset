@@ -41,5 +41,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2EndingScene.unity
     guid: c1a0a6aa46e6b2c45bb47ff99e26c45a
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: e6dca49016e02be4cbea3f6c599abc62
+  - enabled: 1
+    path: Assets/Scenes/ClearScene.unity
+    guid: 6b94df28d175e0242b9fd8ed087a6088
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
